@@ -44,7 +44,7 @@
     <script src="sphere-collider.js"></script>
     <script src="sphere-collider.min.js"></script>
     <!--grabbable-->
-    <script src="reaction_components/clickable.js"></script>
+    <script src="clickable.js"></script>
     <script src="draggable.js"></script>
     <script src="drag-droppable.js"></script>
     <script src="hoverable.js"></script>
@@ -101,9 +101,14 @@
 		
 	</a-assets>
       <!-- ... -->
-	    <a-entity gltf-model src="#g02" position="0 2 5" rotation="-90 0 0" scale="1 1 1" static-body grab></a-entity>
+	    <a-entity gltf-model src="#g04" position="0 2 5" rotation="-90 0 0" scale="1 1 1" static-body grab></a-entity>
 		     
-	   <a-box id="" position="1 2 -2" color="blue" dynamic-body grab></a-box>                                                                                                                                                                                                                                                                                                                                                                        
+	   <a-box id="bx1" position="1 2 -2" color="blue" dynamic-body grab></a-box>
+	    <a-box id="bx2" position="-1 2 -2" color="blue" dynamic-body grab></a-box>
+	    <a-box id="bx3" position="3 2 -2" color="blue" dynamic-body grab></a-box>
+	    
+	    
+	    
 	<a-entity position="0 2 -5" >
                                                                                                                                                                                                                                                                                                                                                                  
 	</a-entity>
