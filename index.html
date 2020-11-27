@@ -87,25 +87,75 @@
 	  <link rel="stylesheet" type="text/css" href="aframe.css">
   </head>
   <body>
-    <a-scene environment="preset: contact; ground: flat; dressingAmount: 0">
+    <a-scene environment="preset: contact; ground: flat; dressingAmount: 0" physics="gravity: -9.8">
 	<a-assets>
-		<a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fstub16.glb?v=1600563980159"></a-asset-item>
-        	<a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear48.glb?v=1600563993621"></a-asset-item>
-        	<a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear32.glb?v=1600564007441"></a-asset-item>
-		<a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432"></a-asset-item>
-        	<a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbboxx.glb?v=1601113544354"></a-asset-item>
-        	<a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
-		<a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
-        	<a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"></a-asset-item>
-        	<a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>
-		
-	</a-assets>
+		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
+            <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
+            <a-mixin id="resize-obj" hoverable grabbable stretchable draggable dynamic-body="linearDamping:.98. angularDamping:.5" shadow="receive:true;castShadow:true"></a-mixin>
+            <a-mixin id="bat-obj" hoverable grabbable draggable dynamic-body shadow="receive:true;castShadow:true"></a-mixin>
+            <a-mixin id="constraint-obj" hoverable grabbable draggable dynamic-body shadow="receive:true;castShadow:true"></a-mixin>
+            <a-mixin id="damping-obj" hoverable grabbable draggable dynamic-body="linearDamping:.99. angularDamping:.5" shadow="receive:true;castShadow:true"></a-mixin>
+            <a-mixin id="hover-obj" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33" hoverable grabbable draggable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.5; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     dynamic-body shadow>
+            </a-mixin>
+            <!--->
+            <a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fstub16.glb?v=1600563980159"></a-asset-item>
+            <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear48.glb?v=1600563993621"></a-asset-item>
+            <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear32.glb?v=1600564007441"></a-asset-item>
+            <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432"></a-asset-item>
+            <a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbboxx.glb?v=1601113544354"></a-asset-item>
+            <a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
+            <a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
+            <a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"></a-asset-item>
+            <a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>-->
+            <a-asset-item id="g10" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fengineblock_.glb?v=1603793530601"></a-asset-item><!--block-->
+            <a-asset-item id="g11" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FCankshaft_.glb?v=1603793853839"></a-asset-item><!--crank-->
+            <a-asset-item id="g12" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fthrustrod_.glb?v=1603794206862"></a-asset-item><!--rod-->
+            <a-asset-item id="g13" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fthrustcap_.glb?v=1603793815420"></a-asset-item><!--brgcap-->
+            <a-asset-item id="g14" src="https"></a-asset-item><!--frontmain-->
+            <a-asset-item id="g15" src="https"></a-asset-item><!--piston-->
+            <a-asset-item id="g16" src="https"></a-asset-item><!--frontcover-->
+            <a-asset-item id="g17" src="https"></a-asset-item><!--sump-->
+            <a-asset-item id="g18" src="https"></a-asset-item><!--pulley-->
+
+            <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                     hoverable grabbable stretchable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="controller" super-hands="colliderEvent: collisions;
+                              colliderEventProperty: els;
+                              colliderEndEvent: collisions;
+                              colliderEndEventProperty: clearedEls;
+                              grabStartButtons: gripdown, pointdown, triggerdown;
+                              grabEndButtons: gripup, pointup, triggerup" static-body="shape: sphere; sphereRadius: 0.11" oculus-touch-controls="hand: left" physics-collider collision-filter="collidesWith: default;" collisionForces="false">
+            			</a-mixin>
+	  
+		    <a-mixin id="red" material="color: red"></a-mixin>
+		    <a-mixin id="blue" material="color: blue"></a-mixin>
+		    <a-mixin id="cubed" geometry="primitive: box"></a-mixin>
+		    <a-mixin id="hinge-target" material="color: red"></a-mixin>
+		    <a-mixin id="constraint" material="color: blue"></a-mixin>
+		    <a-mixin id="weight" mass="12.0"></a-mixin>
+		</a-assets>
+			<a-entity mixin="red weight cube controller" position="-15 5 -15" scale="5 5 5"></a-entity>
+			<a-entity mixin="blue weight cube controller" position="0 5 -15" scale="5 5 5"></a-entity>
+			<a-entity mixin="red weight cube controller" position="15 5 -15" scale="5 5 5"></a-entity>
+			<a-entity mixin="blue weight cube controller" position="-15 5 0" scale="5 5 5"></a-entity>
+			<a-entity mixin="red weight cube controller" position="15 5 0" scale="5 5 5"></a-entity>
+			<a-entity mixin="red weight cube controller" position="-15 5 15" scale="5 5 5"></a-entity>
+			<a-entity mixin="blue weight cube controller" position="0 5 15" scale="5 5 5"></a-entity>
+			<a-entity mixin="red weight cube controller" position="15 5 15" scale="5 5 5"></a-entity>
+			
       <!-- ... -->
 	    <a-entity gltf-model src="#g04" position="0 2 5" rotation="-90 0 0" scale="1 1 1" static-body grab></a-entity>
 		     
 	   <a-box id="bx1" position="1 2 -2" color="blue" dynamic-body grab></a-box>
-	    <a-box id="bx2" position="-1 2 -2" color="blue" dynamic-body grab></a-box>
-	    <a-box id="bx3" position="3 2 -2" color="blue" dynamic-body grab></a-box>
+	    <a-box id="bx2" position="-1 2 -2" color="red" dynamic-body grab></a-box>
+	    <a-box id="bx3" position="3 2 -2" color="green" dynamic-body grab></a-box>
 	    
 	    
 	    
