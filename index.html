@@ -56,7 +56,9 @@
     <script src="aframe-extras.controls.min.js"></script>
     <script src="aframe-extras.misc.min.js"></script>
     <script src="aframe-extras.primitives.min.js"></script>
-    <!--onclick-->
+    <script src="aframe-ground-component.min.js"></script>
+
+	  <!--onclick-->
     <script>
 
 	  </script>
@@ -87,7 +89,7 @@
 	  <link rel="stylesheet" type="text/css" href="aframe.css">
   </head>
   <body>
-    <a-scene environment="preset: contact; ground: flat; dressingAmount: 0" physics="gravity: 0 -9.8 0">
+    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics>
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
             <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
