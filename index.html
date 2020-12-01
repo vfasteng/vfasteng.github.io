@@ -197,7 +197,12 @@
 			-->
       <!-- ... -->
 	    	<a-entity>
-	    		<a-box id="basetable" position=""5 2 -5 width="10" height="1" depth="2" color="blue" outline="true"></a-box>
+	    		<a-box id="basetable" position=""5 2 -5 width="10" height="1" depth="2" color="blue" outline="true">
+				<a-entity gltf-model="#g04" postition="" material="color: yellow"
+					      animation__rotation="property: rotationr; dir: forward; dur: 1000;
+								easing: linear; loop: true; to: 0 360 0">
+				    </a-entity>
+			</a-box>
 	         </a-entity>
 		     
 	   <a-box id="bx1" position="1 2 -2" color="blue" dynamic-body grab></a-box>
