@@ -127,7 +127,7 @@
       
 
         </div>
-    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics>
+    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="">
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
             <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
@@ -221,22 +221,13 @@
 			<a-entity mixin="red weight cube controller" position="15 5 15" scale="5 5 5"></a-entity>
 			-->
       <!-- ... -->
-	    	<a-entity>
-	    		<a-box id="basetable" position=""5 2 -5 width="10" height="1" depth="2" color="blue" outline="true">
-				<a-entity gltf-model="#g04" postition="" material="color: yellow"
-					      animation__rotation="property: rotationr; dir: forward; dur: 1000;
-								easing: linear; loop: true; to: 0 360 0">
-				    </a-entity>
-			</a-box>
-	         </a-entity>
-		     
-	   <a-box id="bx1" position="1 2 -2" color="blue" dynamic-body grab></a-box>
-	    <a-box id="bx2" position="-1 2 -2" color="red" dynamic-body grab></a-box>
-	    <a-box id="bx3" position="3 2 -2" color="green" dynamic-body grab></a-box>
-	    
-	    <!--fourspheres-->
-	    <!-- HINGE PIN working with 2 z-axis wheels-->
-        <a-entity position="0 3 -5" dynamic-body>
+	    	<a-entity id="assy01" position="5 2 -5">
+	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true">
+				<a-entity gltf-model="#g04" position="5 0 0" material="color: yellow"
+					      animation__rotation="property: rotation; dir: forward; dur: 1000;
+								repeat: indefinite; easing: linear; loop: true; to: 0 360 0">
+				  </a-entity>
+				<a-entity position="-5 3 0" rotation="180 0 0">
 
            <a-cylinder id="hinge3-target" position="0 0 0 " color="#777" static-body radius="0.5" height="0.5">
 
@@ -282,6 +273,17 @@
 	        </a-entity>
         </a-entity>
 	    <!--fourspheres end-->
+				
+			</a-box>
+	         </a-entity>
+		     
+	   <a-entity id="bx1" mixin="cube" position="1 2 -2" color="blue" outline="0.2"></a-entity>
+	    <a-box id="bx2" position="-1 2 -2" color="red" dynamic-body grab></a-box>
+	    <a-box id="bx3" position="3 2 -2" color="green" dynamic-body grab></a-box>
+	    
+	    <!--fourspheres-->
+	    <!-- HINGE PIN working with 2 z-axis wheels-->
+        
 	    
 	<a-entity position="0 2 -5" >
                                                                                                                                                                                                                                                                                                                                                                  
