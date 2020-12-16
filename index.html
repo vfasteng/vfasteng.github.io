@@ -287,12 +287,12 @@
 	    <!-- HINGE PIN working with 2 z-axis wheels-->
         
 	    
-	<a-entity position="0 2 -3" >
+	<a-entity position="0 2 -3" dynamic-body>
         	    <a-entity position="0 1 0" rotation="0 0 0">
 			   	<a-cylinder id="hinge33-target" position="0 0 0 " color="#777" static-body radius="0.5" height="0.5">
 
 			    	</a-cylinder>
-			    	<a-entity id="c11" class="cube" mixin="cube" position="0 0 0" material="color: blue"
+			    	<a-entity id="c12" class="cube" mixin="cube" position="0 0 0" material="color: blue"
 				      constraint="type: hinge;
 					   target: #hinge33-target;
 					   axis: 0 1 0;
@@ -301,14 +301,14 @@
 					   targetPivot: 0 -0.5 0;"></a-entity>
 					<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: green"
 					      constraint="type: hinge;
-						   target: #c11;
+						   target: #c12;
 						   axis: 0 0 1;
 						   targetAxis: 0 0 1;
 						   pivot: 0 0 0;
 						   targetPivot: 0 0 1.0"></a-entity>
 						<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: green"
 						      constraint="type: hinge;
-							   target: #c11;
+							   target: #c12;
 							   axis: 0 0 1;
 							   targetAxis: 0 0 1;
 							   pivot: 0 0 0;
@@ -316,14 +316,14 @@
 										   <!---->
 					<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: red"
 					      constraint="type: hinge;
-						   target: #c11;
+						   target: #c12;
 						   axis: 1 0 0;
 						   targetAxis: 1 0 0;
 						   pivot: 0 0 0;
 						   targetPivot: 1.0 0 0"></a-entity>
 						<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: red"
 						      constraint="type: hinge;
-							   target: #c11;
+							   target: #c12;
 							   axis: 1 0 0;
 							   targetAxis: 1 0 0;
 							   pivot: 0 0 0;
