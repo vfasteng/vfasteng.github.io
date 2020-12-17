@@ -21,7 +21,28 @@
     <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
     <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>
 
-
+    <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system/dist/aframe-physics-system.min.js"></script>
+    <script>
+      AFRAME.registerComponent('click-impulse', {
+        init: function () {
+          var el = this.el;
+          
+          el.addEventListener('click', function () {
+            el.body.applyImpulse(
+            /* impulse */
+            new CANNON.Vec3(
+             THREE.Math.randInt(-20, 20),
+             THREE.Math.randInt(-20, 20),
+             THREE.Math.randInt(-20, 20)
+            ),
+            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+            ); 
+          });
+          
+        }
+      });
+    </script>
     <!--constrain-->
     <script src="aframe-ammo-constraints.js"></script>
     <script src="aframe-curve-component.js"></script>
@@ -62,30 +83,7 @@
     <script>
 
 	  </script>
-	  <script>
-	<!--mouse capture-->
-	// forward mouse and touch events to the super-hands entity
-      AFRAME.registerComponent('capture-mouse', {
-        init: function () {
-          this.eventRepeater = this.eventRepeater.bind(this)
-          this.el.sceneEl.addEventListener('loaded', () => {
-            this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
-            this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
-            this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
-            this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
-            this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
-          }, {once: true})
-        },
-        eventRepeater: function (evt) {
-          if (evt.type.startsWith('touch')) {
-            evt.preventDefault()
-            // avoid repeating touchmove because it interferes with look-controls
-            if (evt.type === 'touchmove') { return }
-          }
-          this.el.emit(evt.type, evt.detail)
-        }
-      });
-	  </script>
+	  
 	  <style>
       .button:hover {
         background-color: #fff;
@@ -127,7 +125,7 @@
       
 
         </div>
-    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="friction: 0.1; restitution: 0.5">
+    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="debug: true; friction: 0.1; restitution: 0.5">
 
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
@@ -209,7 +207,7 @@
 		    <a-mixin id="blue" material="color: blue"></a-mixin>
 		    <a-mixin id="cubed" geometry="primitive: box"></a-mixin>
 		    <a-mixin id="hinge-target" material="color: red"></a-mixin>
-		    <a-mixin id="constraint" material="color: blue"></a-mixin>
+		    <a-mixin id="constraint" createConstraint="type: Lock; "></a-mixin>
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
 		</a-assets>
 			<!--<a-entity mixin="red weight cube controller" position="-15 5 -15" scale="5 5 5"></a-entity>
@@ -283,60 +281,53 @@
 	    <a-entity id="bx6" mixin="cube" position="2.5 7 -2" color="green" outline="0.2" scale="2 2 2"></a-entity>
 
 	  
-	    <!--fourspheres-->
-	    <!-- HINGE PIN working with 2 z-axis wheels-->
+	    <!--basic lock constraint from physics system-->
+	  <a-entity position="0 0 -1">
         
-	    
-	<a-entity position="0 2 -3" static-body>
-        	    <a-entity position="0 1 0" rotation="0 0 0">
-			   	<a-cylinder id="hinge33-target" position="0 0 0 " color="#777" static-body radius="0.5" height="0.5">
+        <a-box id="lock-target"
+               position="0 1.0 0"
+               scale="1 1 1"
+               color="#777"
+               static-body>
+        </a-box>
+        <a-box color="#F00"
+               position="0 1.25 0"
+               scale="1 1 1"
+               dynamic-body
+               constraint="type: lock;
+                           target: #lock-target;
+                           maxForce: 100">
+        </a-box>
+      </a-entity>
+	    <!-- freewheel working with ckick-impulse from mouse-->
+        
+    
+      
+      <a-entity id="anchor"
+		geometry="primitive: box;"
+                material="color: yellow; flatShading: true;"
+                position="0 4 0"
+                static-body>
+      </a-entity>
+      
+      <a-entity id="target"
+                geometry="primitive: box; height: 3; width: 1; depth: 1;"
+                material="color: red; flatShading: true;"
+                position="0 3.0 0"
+                xxxconstraint="target: #anchor; type: distance; distance: 1.5;"
+                constraint="type: pointToPoint; target: #anchor; axis: 0 0 0; pivot: 0 3 0; targetPivot: 0 0 0; collideConnected: false;"
 
-			    	</a-cylinder>
-			    	<a-entity id="c12" class="cube" mixin="cube" position.y="0 0.5 0" material="color: blue"
-				      constraint="type: hinge;
-					   target: #hinge33-target;
-					   axis: 0 1 0;
-					   targetAxis: 0 1 0;
-					   pivot: 0 0.1 0;
-					   targetPivot: 0 -0.5 0;"></a-entity>
-					<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: green"
-					      constraint="type: hinge;
-						   target: #c12;
-						   axis: 0 0 1;
-						   targetAxis: 0 0 1;
-						   pivot: 0 0 0;
-						   targetPivot: 0 0 1.0"></a-entity>
-						<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: green"
-						      constraint="type: hinge;
-							   target: #c12;
-							   axis: 0 0 1;
-							   targetAxis: 0 0 1;
-							   pivot: 0 0 0;
-							   targetPivot: 0 0 -1.0"></a-entity>
-										   <!---->
-					<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: red"
-					      constraint="type: hinge;
-						   target: #c12;
-						   axis: 1 0 0;
-						   targetAxis: 1 0 0;
-						   pivot: 0 0 0;
-						   targetPivot: 1.0 0 0"></a-entity>
-						<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: red"
-						      constraint="type: hinge;
-							   target: #c12;
-							   axis: 1 0 0;
-							   targetAxis: 1 0 0;
-							   pivot: 0 0 0;
-							   targetPivot: -1.0 0 0"></a-entity>
-										   <!---->
-					</a-entity>
-				</a-entity>
-			</a-entity>
-	     		<!--fourspheres end-->	                                                                                                                                                                                                                                                                                                                          
-	</a-entity>
-	    <a-entity position="0 0 5">
+                dynamic-body
+                click-impulse>
+      </a-entity>
+      
+	<!-- freewheel end -->
+	  <a-camera position="0 1.6 4">
+		<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+	      </a-camera>
+	    <!--<a-entity position="0 0 5">
 		  <a-camera extras.controls look-controls wasd-controls></a-camera>
-	  </a-entity> 
+	  </a-entity> -->
         <a-cylinder position="0 -0.1 0" radius="150" height=".2" color="lightblue" visible="false" static-body></a-cylinder>
 	</a-scene>
   </body>
