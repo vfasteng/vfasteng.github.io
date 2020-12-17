@@ -273,12 +273,12 @@
 		</a-box>
 	    </a-entity>
 		     
-	   <a-entity id="bx1" mixin="cube" position="1 2 -2" color="blue" outline="0.2" scale="2 2 2"></a-entity>
-	    <a-entity id="bx2" mixin="cube" position="2.5 2 -2" color="red" outline="0.2" scale="2 2 2"></a-entity>
-	    <a-entity id="bx3" mixin="cube" position="4.5 2 -2" color="green" outline="0.2" scale="2 2 2"></a-entity>
-	    <a-entity id="bx4" mixin="cube" position="1.75 4 -2" color="blue" outline="0.2" scale="2 2 2"></a-entity>
-	    <a-entity id="bx5" mixin="cube" position="3.75 4 -2" color="red" outline="0.2" scale="2 2 2"></a-entity>
-	    <a-entity id="bx6" mixin="cube" position="2.5 7 -2" color="green" outline="0.2" scale="2 2 2"></a-entity>
+	   <a-entity id="bx1" mixin="cube" position="1 2 -2" color="blue" outline="0.2" scale="2 2 2" click-impulse ></a-entity>
+	    <a-entity id="bx2" mixin="cube" position="2.5 2 -2" color="red" outline="0.2" scale="2 2 2" click-impulse ></a-entity>
+	    <a-entity id="bx3" mixin="cube" position="4.5 2 -2" color="green" outline="0.2" scale="2 2 2" click-impulse ></a-entity>
+	    <a-entity id="bx4" mixin="cube" position="1.75 4 -2" color="blue" outline="0.2" scale="2 2 2" click-impulse ></a-entity>
+	    <a-entity id="bx5" mixin="cube" position="3.75 4 -2" color="red" outline="0.2" scale="2 2 2" click-impulse  ></a-entity>
+	    <a-entity id="bx6" mixin="cube" position="2.5 7 -2" color="green" outline="0.2" scale="2 2 2" click-impulse></a-entity>
 
 	  
 	    <!--basic lock constraint from physics system-->
@@ -291,7 +291,7 @@
                static-body>
         </a-box>
         <a-box color="#F00"
-               position="0 1.25 0"
+               position="0 2.5 0"
                scale="1 1 1"
                dynamic-body
                constraint="type: lock;
@@ -311,7 +311,7 @@
       </a-entity>
       
       <a-entity id="target"
-                geometry="primitive: box; height: 3; width: 1; depth: 1;"
+                geometry="primitive: box; height: 2; width: 2; depth: 2;"
                 material="color: red; flatShading: true;"
                 position="0 3.0 0"
                 xxxconstraint="target: #anchor; type: distance; distance: 1.5;"
