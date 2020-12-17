@@ -80,7 +80,7 @@
     <script src="aframe-ground-component.min.js"></script>
 
 	  <!--onclick-->
-    <script>
+         <script>
 
 	  </script>
 	  
@@ -221,8 +221,10 @@
 			-->
       <!-- ... -->
 	    	<a-entity id="assy01" position="5 0 -5">
-	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true">
-				<a-entity gltf-model="#g04" position="5 0 0" scale="0.01 0.01 0.01" material="color: yellow" static-body
+	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true"
+			       animation__rotation="property: rotation; dir: forward; dur: 10000;
+						repeat: indefinite; easing: linear; loop: true; to: 0 360 0">
+				<a-entity gltf-model="#g04" position="5 0 0" scale="0.05 0.05 0.05" material="color: yellow" static-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-entity>
 				<a-entity position="-5 1 0" rotation="180 0 0">
