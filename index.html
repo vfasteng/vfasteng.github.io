@@ -117,7 +117,7 @@
   </head>
   <body>
      <div id="container">
-        <button id="load-model" class="button"><span>Load any Model</span></button>
+        <button id="load-model" class="button" onclick="loadModel()" position="0 1 -2" rotation="0 0 0" model-center="bottomAlign: true"><span>Load any Model</span></button>
         <button id="position-it" class="button"><span>Physics Engine</span></button>
         <button id="set-limits" class="button"><span>Constraints & Joints</span></button>
         <button id="export-scene" class="button"><span>Animate & Record</span></button>
@@ -206,7 +206,7 @@
 		    <a-mixin id="red" material="color: red"></a-mixin>
 		    <a-mixin id="blue" material="color: blue"></a-mixin>
 		    <a-mixin id="cubed" geometry="primitive: box"></a-mixin>
-		    <a-mixin id="hinge-target" material="color: red"></a-mixin>
+		    <a-mixin id="hinged-target" material="color: red"></a-mixin>
 		    <a-mixin id="constraint" createConstraint="type: Lock; "></a-mixin>
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
 		</a-assets>
@@ -334,5 +334,11 @@
 	  </a-entity> -->
         <a-cylinder position="0 -0.1 0" radius="150" height=".2" color="lightblue" visible="false" static-body></a-cylinder>
 	</a-scene>
+	
+	<script>
+	function loadModel() {
+	  el.setAttribute('gltf-model', 'https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600')
+	}
+	</script>
   </body>
 </html>
