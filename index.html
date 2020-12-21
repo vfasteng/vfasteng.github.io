@@ -151,10 +151,10 @@
                      dynamic-body shadow>
             </a-mixin>
 	    <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.5"
-                     hoverable grabbable stretchable draggable droppable
+                     clickable hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
                      event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                     dynamic-body shadow>
+                     dynamic-body click-impulse>
             </a-mixin>
             <a-mixin id="controller" super-hands="colliderEvent: collisions;
                               colliderEventProperty: els;
@@ -222,7 +222,7 @@
       <!-- ... -->
 	    	<a-entity id="assy01" position="5 0 -5">
 	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true"
-			       animation__rotation="property: rotation; dir: forward; dur: 10000;
+			       animation__rotation="property: rotation; dir: forward; dur: 100000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0">
 				<a-entity gltf-model="#g04" position="5 0 0" scale="0.05 0.05 0.05" material="color: yellow" static-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
@@ -303,7 +303,7 @@
       </a-entity>
 	    <!-- freewheel working with ckick-impulse from mouse-->
         
-    <-a-entity position="-5 0 -3">
+    <-a-entity position="-4 0 -4">
 	    <a-entity id="anchor"
 		geometry="primitive: box;"
                 material="color: yellow; flatShading: true;"
@@ -311,7 +311,7 @@
                 static-body>
       </a-entity>
       
-      <a-entity id="target"
+      <a-entity id="targett"
                 geometry="primitive: box; height: 1; width: 2; depth: 2;"
                 material="color: red; flatShading: true;"
                 position="0 3.0 0"
