@@ -97,12 +97,12 @@
         cursor: pointer;
         display: inline-block;
         font-size: 12px;
-        height: 34px;
+        height: 20px;
         margin-top: 5px;
         margin-left: 5px;
         outline: none;
         position: relative;
-        width: 190px;
+        width: 90px;
         z-index: 999;
       }
 
@@ -118,9 +118,9 @@
   <body>
      <div id="container">
         <button id="loadModel" class="button" onclick="loadModel()" position="0 1 -2" rotation="0 0 0" model-center="bottomAlign: true"><span>Load any Model</span></button>
-        <button id="position-it" class="button"><span>Physics Engine</span></button>
-        <button id="set-limits" class="button"><span>Constraints & Joints</span></button>
-        <button id="export-scene" class="button"><span>Animate & Record</span></button>
+        <button id="position-it" class="button"><span>Physics </span></button>
+        <button id="set-limits" class="button"><span>Constraints</span></button>
+        <button id="export-scene" class="button"><span>Animate></button>
         <button id="export-scene-bin" class="button"><span>Downloads</span></button>
       
 
@@ -163,13 +163,12 @@
                               grabStartButtons: gripdown, pointdown, triggerdown;
                               grabEndButtons: gripup, pointup, triggerup" static-body="shape: sphere; sphereRadius: 0.11" oculus-touch-controls="hand: left" physics-collider collision-filter="collidesWith: default;" collisionForces="false">
 			</a-mixin>
-		
-            <!---->
-            <a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixboxx.glb?v=1606822401718"></a-asset-item><!--sixboxx-->
-            <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6way6.glb?v=1606803426724"></a-asset-item><!--sixway6-->
-            <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"></a-asset-item><!--onelink-->
-            <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432""></a-asset-item><!--gear16-->
-            <a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fwheelassemblygd.glb?v=1613578464283"></a-asset-item>
+	
+		    <a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fwheelassemblygd.glb?v=1613578464283"></a-asset-item>
+                <a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixboxx.glb?v=1606822401718"></a-asset-item>
+            <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6way6.glb?v=1606803426724"></a-asset-item>
+            <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"></a-asset-item>
+            <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432""></a-asset-item>
             <!--<a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
             <a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
             <a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"></a-asset-item>
@@ -224,7 +223,7 @@
 	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true"
 			       animation__rotation="property: rotation; dir: forward; dur: 100000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0">
-				<a-entity gltf-model="#g04" position="5 0 0" scale="0.05 0.05 0.05" material="color: yellow" static-body
+				<a-entity gltf-model="#g05" position="5 0 0" rotation="0 0 0" scale="0.05 0.05 0.05" material="color: yellow" static-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
 					  ></a-entity>
