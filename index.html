@@ -163,8 +163,10 @@
                               grabStartButtons: gripdown, pointdown, triggerdown;
                               grabEndButtons: gripup, pointup, triggerup" static-body="shape: sphere; sphereRadius: 0.11" oculus-touch-controls="hand: left" physics-collider collision-filter="collidesWith: default;" collisionForces="false">
 			</a-mixin>
-	
-		    <a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fwheelassemblygd.glb?v=1613578464283"></a-asset-item>
+		<a-asset-item id="cadboxx-std" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
+	 	<a-asset-item id="cadboxx-three" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxxthree.glb?v=1618302772439"></a-asset-item>
+			
+		<a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fwheelassemblygd.glb?v=1613578464283"></a-asset-item>
                 <a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixboxx.glb?v=1606822401718"></a-asset-item>
             <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6way6.glb?v=1606803426724"></a-asset-item>
             <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"></a-asset-item>
@@ -208,11 +210,30 @@
 		    <a-mixin id="hinged-target" material="color: red"></a-mixin>
 		    <a-mixin id="constraint" createConstraint="type: Lock; "></a-mixin>
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
-		    <a-asset-item id="cadboxx-std" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
-		    <a-asset-item id="cadboxx-three" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxxthree.glb?v=1618302772439"></a-asset-item>
-			
+		    
 		    <a-mixin id="general" animation="" animation-mixer="" auto-detect-controllers="" cursor="" gamepad-controls="" draggable="" gltf-model gltf-part-plus="" gridhelper="" hand-controls="" inspector="" jump-ability="" model-center="bottomAlign:true" movement-controls="" obj-model object-model ocean="" oculus-touch-controls super-hands="" stretchable touch-controls tracked-controls-webvr tracked-controls-webxr wasd-controls windows-motion-controls></a-mixin>
 		</a-assets>
+		
+		<a-entity gltf-model="#cadboxx-three" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow" dynamic-body
+					      animation__rotation="property: rotation; dir: forward; dur: 1000;
+						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
+					  ></a-entity>
+		<a-entity position="-5 1 0" rotation="0 0 0">
+					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
+
+					</a-cylinder>
+					<a-entity gltf-model="#cadboxx-three" position="0 2.5 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow"
+						  dynamic-body click-impulse
+						    constraint="type: hinge;
+						   target: #hinge4-target;
+						   axis: 0 1 0;
+						   targetAxis: 0 1 0;
+						   pivot: 0 0.1 0;
+					   targetPivot: 0 0.5 0;"></a-entity>
+		</a-entity>
+		
+		
+		
 			<!--<a-entity mixin="red weight cube controller" position="-15 5 -15" scale="5 5 5"></a-entity>
 			<a-entity mixin="blue weight cube controller" position="0 5 -15" scale="5 5 5"></a-entity>
 			<a-entity mixin="red weight cube controller" position="15 5 -15" scale="5 5 5"></a-entity>
@@ -222,7 +243,7 @@
 			<a-entity mixin="blue weight cube controller" position="0 5 15" scale="5 5 5"></a-entity>
 			<a-entity mixin="red weight cube controller" position="15 5 15" scale="5 5 5"></a-entity>
 			-->
-      <!-- ... -->
+      <!-- ... 
 	    	<a-entity id="assy01" position="5 0 -5">
 	    		<a-box id="basetable" position="0 1 0" rotation="0 0 0" width="10" height="1" depth="2" color="blue" outline="true"
 			       animation__rotation="property: rotation; dir: forward; dur: 100000;
@@ -278,7 +299,7 @@
 							   targetAxis: 0 0 1;
 							   pivot: 0 0 0;
 							   targetPivot: 0 0 -1.0"></a-entity>
-										   <!---->
+										  
 					<a-entity class="sphere" mixin="sphere" position="0 0 0" material="color: red"
 					      constraint="type: hinge;
 						   target: #c11;
@@ -293,11 +314,11 @@
 							   targetAxis: 1 0 0;
 							   pivot: 0 0 0;
 							   targetPivot: -1.0 0 0"></a-entity>
-										   <!---->
+										   
 					</a-entity>
 				</a-entity>
 			</a-entity>
-	     		<!--fourspheres end-->	
+	     		<!--fourspheres en
 		</a-box>
 	    </a-entity>
 		     
