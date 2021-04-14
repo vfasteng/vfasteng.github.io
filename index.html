@@ -20,8 +20,8 @@
     <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script>
     <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
     <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>
-
-    <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-system/dist/aframe-physics-system.min.js"></script>
     <script>
       AFRAME.registerComponent('click-impulse', {
@@ -208,6 +208,10 @@
 		    <a-mixin id="hinged-target" material="color: red"></a-mixin>
 		    <a-mixin id="constraint" createConstraint="type: Lock; "></a-mixin>
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
+		    <a-asset-item id="cadboxx-std" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
+		    <a-asset-item id="cadboxx-three" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxxthree.glb?v=1618302772439"></a-asset-item>
+			
+		    <a-mixin id="general" animation="" animation-mixer="" auto-detect-controllers="" cursor="" gamepad-controls="" draggable="" gltf-model gltf-part-plus="" gridhelper="" hand-controls="" inspector="" jump-ability="" model-center="bottomAlign:true" movement-controls="" obj-model object-model ocean="" oculus-touch-controls super-hands="" stretchable touch-controls tracked-controls-webvr tracked-controls-webxr wasd-controls windows-motion-controls></a-mixin>
 		</a-assets>
 			<!--<a-entity mixin="red weight cube controller" position="-15 5 -15" scale="5 5 5"></a-entity>
 			<a-entity mixin="blue weight cube controller" position="0 5 -15" scale="5 5 5"></a-entity>
@@ -344,13 +348,74 @@
                 click-impulse>
       </a-entity>
 	</a-entity>
-      
-      
-      
+      <!--start-->
+      <a-entity id="cpl" position="0 0 0" rotation="-90 0 0" id="cadplate_1" scale="1 1 1" visible="true">
+		<a-entity id="bottom1" static-body >
+			<a-box id="cpbotb_1" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="red" scale="1 1 1" visible="true">
+				<a-box id="cpbotc_1" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10" visible="true"><a-light type:point;color:white;intensity:0.9></a-light></a-box>
+					
+			</a-box>
+		</a-entity>
+		<a-entity id="top1" static-body>
+			<a-box id="cptopb_1" position="0 0 7.5" width=15 height=15 depth=1 color="red" scale="1 1 1" visible="true">
+				<a-box id="cpbopc_1" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10" visible="true"><a-light type:point;color:white;intensity:0.9></a-light></a-box>
+				
+			</a-box>
+			
+		</a-entity>
+		
+      </a-entity>
+      <a-entity id="cp2" position="0 0 0" rotation="0 90 0" id="cadplate_2" scale="1 1 1" visible="true">
+	<a-entity id="bottom2" static-body >
+		<a-box id="cpbotb_2" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="blue" scale="1 1 1" visible="true">
+			<a-box id="cpbotc_2" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.20 10" visible="true"></a-box>
+				
+		</a-box>
+	</a-entity>
+	<a-entity id="top2" static-body>
+		<a-box id="cptopb_2" position="0 0 7.5" width=15 height=15 depth=1 color="blue" scale="1 1 1" visible="true">
+			<a-box id="cptopc_2" position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.20 10" visible="true">
+			</a-box>
+		</a-box>
+		
+	</a-entity>
+	
+</a-entity>
+<a-entity id="cp3" position="0 0 0" rotation="0 0 0" id="cadplate_3" scale="1 1 1" visible="true">
+	<a-entity id="bottom3" static-body >
+		<a-box id="cpbotb_3" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="darkgreen" scale="1 1 1" visible="true">
+			<a-box id="cpbotc_3" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10" visible="true"></a-box>
+				
+		</a-box>
+	</a-entity>
+	<a-entity id="top3" static-body>
+		<a-box id="cptopb_3" position="0 0 7.5" width=15 height=15 depth=1 color="darkgreen" scale="1 1 1" visible="true">
+			<a-box id="cptopc_3" position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10"  visible="true">
+			</a-box>
+		</a-box>
+	
+	</a-entity>
+	</a-entity>
+      <!--end-->
 	<!-- freewheel end -->
-	  <a-camera position="0 1.6 4">
-		<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-	      </a-camera>
+	     
+	     <a-entity gltf-model id="bxx1" src="#cadboxx-three" position="0 2 0" dynamic-body></a-entity>
+		<a-entity gltf-model id="bxx2" src="#cadboxx-three" position="0 2 -4" dynamic-body></a-entity>
+		<a-entity gltf-model  id="bxx3" src="#cadboxx-three" position="0 2 -8" dynamic-body></a-entity>
+		<a-entity gltf-model id="bxx4" src="#cadboxx-three" position="-4 2 0" dynamic-body></a-entity>
+	<a-entity>
+		<a-entity gltf-model id="bxx5" src="#cadboxx-three" position="4 2 0" dynamic-body></a-entity>
+	</a-entity>
+			<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
+
+		<a-entity>
+			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 5; initialPosition: 5 0 7.5"></a-entity>
+		</a-entity>
+	     
+	     
+	     
+	     
+	  
 	    <!--<a-entity position="0 0 5">
 		  <a-camera extras.controls look-controls wasd-controls></a-camera>
 	  </a-entity> -->
@@ -364,3 +429,67 @@
 	</script>
   </body>
 </html>
+
+    
+    <!--Just include the toolkit js file from a CDN--
+    <script src="https://unpkg.com/aframe-vartiste-toolkit@latest/vartiste-toolkit.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.1/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.
+	<script id="tool" src="~/js/aframe-tool-component.js"></script>
+	<script id="snap" src="~/js/snap.js"></script>
+	<script id="grab" src="~/js/grab-lock.js"></script>see vartiste-toolkit
+	<script id="physgrab" src="~/js/PhysicsGrab.js"></script>
+	<script id="crecon" src="~/js/createConstraint.js"></script>
+	<script id="devv" src="~/js/aframe-dev-components.min.js"></script>
+	<script id="gload" src="~/js/gltfLoader.js"></script>
+	<script id="part" src="~/js/GLTFPart.js"></script>
+    </head>
+<body>
+
+<!--script>
+	<a-entity position="0 3 -5">
+
+            <a-cylinder id="hinge3-target" position="0 0 0 " color="#777" static-body radius="5" height="1.0">
+
+            </a-cylinder>
+            <a-entity id="c11" class="cube" mixin="cube" position="0 0 0" material="color: blue"
+                      constraint="type: hinge;
+                           target: #hinge3-target;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0.1 0;
+                           targetPivot: 0 1 0;"></a-entity>
+							   <a-entity class="cube" mixin="cube" position="0 0 0" material="color: green"
+	                      constraint="type: hinge;
+	                           target: #c11;
+	                           axis: 0 1 0;
+	                           targetAxis: 0 0 1;
+	                           pivot: 0 0 0;
+	                           targetPivot: 0 0 1.0"></a-entity>
+								   	<a-entity class="cube" mixin="cube" position="0 0 0" material="color: green"
+		                      constraint="type: hinge;
+		                           target: #c11;
+	                           axis: 0 1 0;
+	                           targetAxis: 0 0 1;
+	                           pivot: 0 0 0;
+	                           targetPivot: 0 0 -1.0"></a-entity>
+								   <a-entity class="cube" mixin="cube" position="0 0 0" material="color: red"
+	                      constraint="type: hinge;
+	                           target: #c11;
+	                           axis: 0 1 0;
+	                           targetAxis: 0 1 0;
+	                           pivot: 0 0 0;
+	                           targetPivot: 1.0 0 0"></a-entity>
+								   	<a-entity class="cube" mixin="cube" position="0 0 0" material="color: red"
+		                      constraint="type: hinge;
+		                           target: #c11;
+	                           axis: 0 1 0;
+	                           targetAxis: 0 1 0;
+	                           pivot: 0 0 0;
+	                           targetPivot: -1.0 0 0"></a-entity>
+		        </a-entity>
+		</script-->
+
+
