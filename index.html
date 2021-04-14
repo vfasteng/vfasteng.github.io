@@ -419,18 +419,32 @@
 	</a-entity>
       <!--end-->
 	<!-- freewheel end -->
-	     
-	     <a-entity gltf-model id="bxx1" src="#cadboxx-three" position="0 2 0" dynamic-body></a-entity>
-		<a-entity gltf-model id="bxx2" src="#cadboxx-three" position="0 2 -4" dynamic-body></a-entity>
-		<a-entity gltf-model  id="bxx3" src="#cadboxx-three" position="0 2 -8" dynamic-body></a-entity>
-		<a-entity gltf-model id="bxx4" src="#cadboxx-three" position="-4 2 0" dynamic-body></a-entity>
+	 <a-entity>
+	     <a-entity gltf-model id="bxx1" src="#cadboxx-three" position="0 2 0" dynamic-body click-impulse></a-entity>
+	</a-entity>	
+		
+	<a-entity>		
+		<a-entity gltf-model id="bxx2" src="#cadboxx-three" position="0 2 -4" dynamic-body click-impulse></a-entity>
+	</a-entity>	
+		
+	<a-entity>		
+		<a-entity gltf-model  id="bxx3" src="#cadboxx-three" position="0 2 -8" dynamic-body click-impulse></a-entity>
+	</a-entity>	
+		
 	<a-entity>
-		<a-entity gltf-model id="bxx5" src="#cadboxx-three" position="4 2 0" dynamic-body></a-entity>
+		<a-entity gltf-model id="bxx4" src="#cadboxx-three" position="-4 2 0" dynamic-body click-impulse></a-entity>
+	</a-entity>	
+		
+	<a-entity>
+		<a-entity gltf-model id="bxx5" src="#cadboxx-three" position="4 2 0" dynamic-body click-impulse ></a-entity>
 	</a-entity>
 			<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
 
 		<a-entity>
-			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 5; initialPosition: 5 0 7.5"></a-entity>
+			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 5; initialPosition: 5 0 7.5">
+											<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+     			
+			</a-entity>
 		</a-entity>
 	     
 	     
