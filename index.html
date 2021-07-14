@@ -388,7 +388,7 @@
       </a-entity>
 	</a-entity>
       <!--start-->
-      <a-entity id="cpl" position="0 0 0" rotation="-90 0 0" id="cadplate_1" scale="1 1 1" visible="true">
+      <a-entity id="cpl" position="0 5 0" rotation="-90 0 0" id="cadplate_1" scale="1 1 1" visible="true">
 		<a-entity id="bottom1" static-body >
 			<a-box id="cpbotb_1" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="red" scale="1 1 1" visible="true">
 				<a-box id="cpbotc_1" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10" visible="true"><a-light type:point;color:white;intensity:0.9></a-light></a-box>
@@ -404,7 +404,7 @@
 		</a-entity>
 		
       </a-entity>
-      <a-entity id="cp2" position="0 0 0" rotation="0 90 0" id="cadplate_2" scale="1 1 1" visible="true">
+      <a-entity id="cp2" position="0 5 0" rotation="0 90 0" id="cadplate_2" scale="1 1 1" visible="true">
 	<a-entity id="bottom2" static-body >
 		<a-box id="cpbotb_2" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="blue" scale="1 1 1" visible="true">
 			<a-box id="cpbotc_2" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.20 10" visible="true"></a-box>
@@ -420,7 +420,7 @@
 	</a-entity>
 	
 </a-entity>
-<a-entity id="cp3" position="0 0 0" rotation="0 0 0" id="cadplate_3" scale="1 1 1" visible="true">
+<a-entity id="cp3" position="0 5 0" rotation="0 0 0" id="cadplate_3" scale="1 1 1" visible="true">
 	<a-entity id="bottom3" static-body >
 		<a-box id="cpbotb_3" position="0 0 -7.5" static-body width=15 height=15 depth=1 color="darkgreen" scale="1 1 1" visible="true">
 			<a-box id="cpbotc_3" static-body position="0 0 0" rotation="90 0 0" color="yellow" scale="10 1.2 10" visible="true"></a-box>
@@ -459,8 +459,7 @@
 			<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
 
 		<a-entity>
-			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 5; initialPosition: 5 0 7.5">
-											<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+			<a-entity camera look-controls orbit-controls="target: 0 5 0; minDistance: 0.5; maxDistance: 7.5; initialPosition: 5 0 7.5"><a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
      			
 			</a-entity>
 		</a-entity>
