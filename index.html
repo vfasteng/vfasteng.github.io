@@ -212,7 +212,15 @@
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
 		    
 		    <a-mixin id="general" animation="" animation-mixer="" auto-detect-controllers="" cursor="" gamepad-controls="" draggable="" gltf-model gltf-part-plus="" gridhelper="" hand-controls="" inspector="" jump-ability="" model-center="bottomAlign:true" movement-controls="" obj-model object-model ocean="" oculus-touch-controls super-hands="" stretchable touch-controls tracked-controls-webvr tracked-controls-webxr wasd-controls windows-motion-controls></a-mixin>
-		</a-assets>
+		
+		    <a-asset-item id="redglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fred.glb?v=1623935931074"></a-asset-item>
+			<a-asset-item id="greenglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgreen.glb?v=1623936133305"></a-asset-item>
+			<a-asset-item id="blueglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblue.glb?v=1623936011050"></a-asset-item>
+			
+			<a-asset-item id="ttbleci" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fturntable2ci.glb?v=1622008262714"></a-asset-item>
+			
+		    
+	</a-assets>
 		
 		<a-entity gltf-model="#cadboxx-three" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow" dynamic-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
@@ -231,23 +239,16 @@
 						   targetAxis: 0 1 0;
 						   pivot: 0 0.1 0;
 					   targetPivot: 0 0.5 0;"></a-entity>
-			
-		<a-asset-item id="redglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fred.glb?v=1623935931074"></a-asset-item>
-			<a-asset-item id="greenglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgreen.glb?v=1623936133305"></a-asset-item>
-			<a-asset-item id="blueglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblue.glb?v=1623936011050"></a-asset-item>
-			
-			<a-asset-item id="ttbleci" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fturntable2ci.glb?v=1622008262714"></a-asset-item>
-			
-		</a-assets>
+			</a-entity>		
 		
 		
 		<a-entity id="uj-assembly" mixin="assem" position="0 0 0" rotation="0 0 0" scale="1 1 1">
 			
-	        <a-entity gltf-model="#ttbleci" position="3.5 4 0" mixin="red"></a-cylinder>
+	        <a-entity gltf-model="#ttbleci" position="3.5 4 0" mixin="red"></a-entity>
 	
 			
 		</a-entity>
-		 <a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body></a-cylinder>
+		 <a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body></a-entity>
 	
 		
 		
