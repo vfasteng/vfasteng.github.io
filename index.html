@@ -182,8 +182,8 @@
             <a-asset-item id="g14" src=""></a-asset-item><!--frontmain-->
             <a-asset-item id="g15" src=""></a-asset-item><!--piston-->
             <a-asset-item id="g16" src=""></a-asset-item><!--frontcover-->
-            <a-asset-item id="g17" src=""					"></a-asset-item><!--sump-->
-            <a-asset-item id="g18" src=""></a-asset-item><!--pulley-->
+            <a-asset-item id="g17" src=""></a-asset-item><!--sump-->
+            <a-asset-item id="g18" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsumtin.glb?v=1626868861458"></a-asset-item><!--pulley-->
 	    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                      hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -222,10 +222,10 @@
 		    
 	</a-assets>
 		
-		<!--<a-entity gltf-model="#cadboxx-three" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow" dynamic-body
+		<a-entity gltf-model="#g18" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow" dynamic-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
-					  ></a-entity>-->
+					  ></a-entity>
 		<a-entity id="bd3spin" position="0 1 0" rotation="0 0 0">
 					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
 
