@@ -222,16 +222,13 @@
 		    
 	</a-assets>
 		
-		<a-entity gltf-model="#g18" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" material="color: yellow" dynamic-body
-					      animation__rotation="property: rotation; dir: forward; dur: 1000;
-						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
-					  ></a-entity>
+		<a-entity gltf-model="#g18" position="5 0 0" rotation="0 0 -90" scale="0.25 0.25 0.25" ></a-entity>
 		<a-entity id="bd3spin" position="0 1 0" rotation="0 0 0">
 					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
 
 					</a-cylinder>
-					<a-entity gltf-model="#cadboxx-three" position="0 2.5 0" rotation="0 0 -90"
-						  scale="0.25 0.25 0.25"
+					<a-entity gltf-model="#g18" position="0 2.5 0" rotation="0 0 -90"
+						  scale="0.1 0.1 0.1"
 						  dynamic-body=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 						    constraint="type: hinge;
 						   target: #hinge4-target;
@@ -242,13 +239,13 @@
 			</a-entity>		
 		
 		
-		<a-entity id="uj-assembly" mixin="assem" position="0 0 0" rotation="0 0 0" scale="1 1 1">
+		<!--a-entity id="uj-assembly" mixin="assem" position="0 0 0" rotation="0 0 0" scale="1 1 1">
 			
 	        <a-entity gltf-model="#ttbleci" position="3.5 4 0" mixin="red"></a-entity>
 	
 			
 		</a-entity>
-		 <a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body></a-entity>
+		 <a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body></a-entity-->
 	
 		
 		
