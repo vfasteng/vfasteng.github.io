@@ -172,11 +172,11 @@
             <a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixboxx.glb?v=1606822401718"></a-asset-item>
             <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6way6.glb?v=1606803426724"></a-asset-item>
             <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"></a-asset-item>
-            <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432""></a-asset-item>
+            <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432"></a-asset-item>
             <a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
             <a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
             <a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"></a-asset-item>
-            <a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>-->
+            <a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>
             <a-asset-item id="g10" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fengineblock_.glb?v=1603793530601"></a-asset-item><!--block-->
             <a-asset-item id="g11" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FCankshaft_.glb?v=1603793853839"></a-asset-item><!--crank-->
             <a-asset-item id="g12" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fthrustrod_.glb?v=1603794206862"></a-asset-item><!--rod-->
@@ -237,19 +237,19 @@
 									      
 			</a-entity>
 												      
-			<a-entity id="bd3spin" position="0 1 0" rotation="0 0 0">
-					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.1" height="0.1">
+			<a-entity id="fras" position="1 0 -2" rotation="0 0 0">
+					<a-cylinder id="fr-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.5">
 
 					</a-cylinder>
-					<a-entity gltf-model="#g14 position="0 2.5 0" rotation="0 0 -90"
+					<a-entity gltf-model="#g16"
 						  scale="1 1 1"
-						  dynamic-body=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+						  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 						    constraint="type: hinge;
-						   target: #hinge4-target;
-						   axis: 0 1 0;
-						   targetAxis: 0 1 0;
-						   pivot: 0 0.1 0;
-					   targetPivot: 0 0.5 0;"></a-entity>
+						   target: #fr-target;
+						   axis: 1 0 0;
+						   targetAxis: 1 0 0;
+						   pivot: 0 0 0;
+					   targetPivot: 0.5 0 0;"></a-entity>
 			</a-entity>									      
 			
 			<!--<a-box position="1 0 -2" rotation="0 0 0" height=".5" width="1" depth="1" color="lightblue"></a-box>
