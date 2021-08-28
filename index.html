@@ -252,16 +252,22 @@
 					   targetPivot: 0 0 0;
 						  click-impulse"></a-entity>
 			</a-entity>									      
+			<a-entity id="fras" position="1 0 -2" rotation="0 0 -90">
+					<a-cylinder id="br-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.5">
+
+					</a-cylinder>
+					<a-entity id="brw" gltf-model="#g14"
+						  scale="1 1 1
+						  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+						    constraint="type: hinge;
+						   target: #br-target;
+						   axis: 1 0 0;
+						   targetAxis: 1 0 0;
+						   pivot: 0 0 0;
+					   targetPivot: 0 0 0;
+						  click-impulse"></a-entity>
+			</a-entity>
 			
-			<!--<a-box position="1 0 -2" rotation="0 0 0" height=".5" width="1" depth="1" color="lightblue"></a-box>
-				<a-entity id="fr" gltf-model="#g16" position="0 0 0" rotation="0 0 0" ></a-entity>
-	
-			<a-box position="-1 0 2" rotation="0 0 0" height=".5" width="1" depth="1" color="lightblue"></a-box>
-				<a-entity id="fr" gltf-model="#g16" position="0 0 0" rotation="0 0 0" ></a-entity>
-			
-			<a-box position="-1 0 -2" rotation="0 0 0" height=".5" width="1" depth="1" color="lightblue"></a-box>
-				<a-entity id="fl" gltf-model="#g16" position="0 0 0" rotation="0 0 0" ></a-entity>
-			-->
 			
 		</a-box>
 											 
