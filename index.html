@@ -128,7 +128,7 @@
 
         </div>
     <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="debug: false; friction: 0.1; restitution: 0.5">
-
+	<a-box id="grnd" position="0 -.1 0" width="100" depth="100" height=".2" ></a-box>
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
             <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
