@@ -228,7 +228,7 @@
 	
 	<!--chassis--->
 	
-	<a-entity id="char" dynamic-body>
+	<a-entity id="char" static-body>
 		<a-box position="0 4 0" rotation="0 0 0" height=".25" width="2" depth="4" color="blue" static-body>
 												      
 			<!--<a-entity id="fra">
@@ -285,7 +285,21 @@
 	
 	
 	<!--  g19 32-stub g20 16-stub -->
-	
+	<a-entity>
+		<a-cylinder id="cspin-target" position="0 0 0" rotation="0 0 0" color="red" static-body radius="0.5" height="1">
+
+		</a-cylinder>
+		<a-entity gltf-model="#g01" position="0 2.5 0" rotation="0 0 -90"
+						  scale="1 1 1"
+						  dynamic-body=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+						    constraint="type: hinge;
+						   target: #cspin-target;
+						   axis: 0 1 0;
+						   targetAxis: 0 1 0;
+						   pivot: 0 0.1 0;
+					   targetPivot: 0 0.5 0;" click-impulse></a-entity>
+		
+	</a-entity>
 	
 	
 	
@@ -295,7 +309,7 @@
 					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.1" height="0.1">
 
 					</a-cylinder>
-					<a-entity gltf-model="#g14 position="0 2.5 0" rotation="0 0 -90"
+					<a-entity gltf-model="#g14" position="0 2.5 0" rotation="0 0 -90"
 						  scale="1 1 1"
 						  dynamic-body=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 						    constraint="type: hinge;
