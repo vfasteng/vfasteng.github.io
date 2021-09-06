@@ -310,7 +310,32 @@
 	
 	
 	<!-- g17  lambo wheel disc and tyre  g18 lambo caliper -->
-	
+	<a-entity id="" position="0 4 0" >
+		<a-cylinder id="mm-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.5">
+
+					</a-cylinder>
+					<a-entity id="mm" gltf-model="#g17
+						  scale="1 1 1
+						  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+						    constraint="type: hinge;
+						   target: #mm-target;
+						   axis: 0 0 1;
+						   targetAxis: 0 0 1;
+						   pivot: 0 0 0;
+					   targetPivot: 0 0 0;
+						  click-impulse"></a-entity>
+								<a-entity id="nn" gltf-model="#g18"
+									  scale="1 1 1
+									  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+									    constraint="type: hinge;
+									   target: #mm-target;
+									   axis: 0 0 1;
+									   targetAxis: 0 0 1;
+									   pivot: 0 0 0;
+								   targetPivot: 0 0 0;
+									  click-impulse"></a-entity>
+												   
+	</a-entity>
 	
 	
 	<!--  g19 32-stub g20 16-stub -->
@@ -318,8 +343,7 @@
 		<a-cylinder id="cspin-target" position="0 2 0" rotation="0 0 0" color="red" static-body radius="0.5" height="1">
 
 		</a-cylinder>
-		<a-entity gltf-model="#g01"
-						  scale="1 1 1"
+		<a-box id="cspin" `position="0 4 0" scale="1 1 1"
 						  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 						    constraint="type: hinge;
 						   target: #cspin-target;
