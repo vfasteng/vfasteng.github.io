@@ -173,7 +173,7 @@
             <a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6way6.glb?v=1606803426724"></a-asset-item>
             <a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"></a-asset-item>
             <a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432"></a-asset-item>
-            <a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
+            <a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchar.glb?v=1630923564727"></a-asset-item>
             <a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
             <a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"></a-asset-item>
             <a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>
@@ -226,7 +226,7 @@
 		    
 	</a-assets>
 	
-	<!--chassis--->
+	<!--chassis---
 	
 	<a-entity id="char" static-body>
 		<a-box position="0 4 0" rotation="0 0 0" height=".25" width="2" depth="4" color="blue" static-body>
@@ -302,7 +302,7 @@
 											 
 											 
 	</a-entity>
-	
+	-->
 	
 	<!--g14 off-road wheel g15 buggy g16 was1.glb-->
 	
@@ -310,7 +310,7 @@
 	
 	
 	<!-- g17  lambo wheel disc and tyre  g18 lambo caliper -->
-	<a-entity id="" position="0 4 0" >
+	<a-entity id="lambowheel" position="0 4 0" >
 		<a-cylinder id="mm-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.5">
 
 					</a-cylinder>
@@ -326,7 +326,7 @@
 						  click-impulse"></a-entity>
 								<a-entity id="nn" gltf-model="#g18"
 									  scale="1 1 1
-									  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
+									  static-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 									    constraint="type: hinge;
 									   target: #mm-target;
 									   axis: 0 0 1;
