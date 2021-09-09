@@ -226,7 +226,7 @@
 		    
 	</a-assets>
 	
-	<a-entity id="tt--wheels" >
+	<!---<a-entity id="tt--wheels" >
 		<a-box position="3.5 1.5 3.5" rotation="0 0 0" height=".5" width="8" depth="4" color="lightblue">
 			<a-entity id="bkr" gltf-model="#ttbleci" position="4 4 0" rotation="90 0 0" click-impulse ></a-entity>
 			<a-entity id="frr" gltf-model="#ttbleci" position="-4 4 0" rotation="90 0 0" click-impulse ></a-entit180
@@ -235,10 +235,10 @@
 			
 		</a-box>
 									      
-	</a-entity>
+	</a-entity>-->
 		
 		
-	<!--chassis--->
+	<!--chassis---
 	
 	<a-entity id="char" static-body>
 		<a-box position="0 4 0" rotation="0 0 0" height=".25" width="2" depth="4" color="blue" static-body>
@@ -350,12 +350,12 @@
 	</a-entity>
 	
 	
-	<!--  g19 32-stub g20 16-stub -->
-	<a-entity>
-		<a-cylinder id="cspin-target" position="0 1 0" rotation="0 0 0" color="red" static-body radius="0.25" height="0.25">
+	<!--  g19 32-stub g20 16-stub original-->
+	<a-entity id="rotator" position="0 0 0" rotation="0 0 0">
+		<a-cylinder id="cspin-target" position="0 0.125 0" rotation="0 0 0" color="red" static-body radius="0.25" height="0.25">
 
 		</a-cylinder>
-		<a-box id="cspin" `position="0 1.5 0" scale="1 0.25 1" color="blue"
+		<a-box id="cspin" `position="0 0.4 0" scale="1 0.2 1" color="blue"
 						  dynamic-body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                click-impulse=""
 						    constraint="type: hinge;
 						   target: #cspin-target;
