@@ -227,9 +227,11 @@
 	</a-assets>
 	
 	<a-entity id="tt--wheels" >
-		<a-box position="3.5 1.5 3.5" rotation="0 0 0" height=".5" width="5" depth="2.5" color="lightblue">
-			<a-entity id="bkr" gltf-model="#ttbleci" position="2.5 2.5 0" rotation="90 0 0" click-impulse ></a-entity>
-			<a-entity id="frr" gltf-model="#ttbleci" position="-2.5 2.5 0" rotation="90 0 0" click-impulse ></a-entity>
+		<a-box position="3.5 1.5 3.5" rotation="0 0 0" height=".5" width="8" depth="4" color="lightblue">
+			<a-entity id="bkr" gltf-model="#ttbleci" position="4 4 0" rotation="90 0 0" click-impulse ></a-entity>
+			<a-entity id="frr" gltf-model="#ttbleci" position="-4 4 0" rotation="90 0 0" click-impulse ></a-entity>
+			<a-entity id="bkl" gltf-model="#ttbleci" position="4 4 0" rotation="90 0 0" click-impulse ></a-entity>
+			<a-entity id="frl" gltf-model="#ttbleci" position="-4 4 0" rotation="90 0 0" click-impulse ></a-entity>
 			
 		</a-box>
 									      
@@ -507,24 +509,42 @@
 	    <a-entity id="bx5" mixin="cube" position="3.75 4 -2" color="red" outline="0.2" scale="2 2 2" click-impulse  ></a-entity>
 	    <a-entity id="bx6" mixin="cube" position="2.5 7 -2" color="green" outline="0.2" scale="2 2 2" click-impulse></a-entity>
 -->
-	  
-	    <!--basic lock constraint from physics system--
+	  <!--basic lock constraint from physics system-->
 	  <a-entity position="-3 2 -1">
         
-        <a-box id="lock-target"
-               position="0 1.0 0"
-               scale="1 1 1"
-               color="#777"
-               static-body>
-        </a-box>
-        <a-box color="#F00"
-               position="0 2.5 0"
-               scale="1 1 1"
-               dynamic-body
-               constraint="type: lock;
-                           target: #lock-target;
-                           maxForce: 100">
-        </a-box>
+		<a-box id="lock-target"
+		       position="0 1.0 0"
+		       scale="1 .0001 1"
+		       color="#777"
+		       static-body>
+		</a-box>
+		<a-box color="#F00"
+		       position="0 2 0"
+		       scale="1 .0001 1"
+		       dynamic-body
+		       constraint="type: lock;
+				   target: #lock-target;
+				   maxForce: 100">
+		</a-box>
+      	  </a-entity>
+						 
+	    <!--basic lock constraint template--
+	  <a-entity position="-3 2 -1">
+        
+		<a-box id="lock-target"
+		       position="0 1.0 0"
+		       scale="1 1 1"
+		       color="#777"
+		       static-body>
+		</a-box>
+		<a-box color="#F00"
+		       position="0 2 0"
+		       scale="1 1 1"
+		       dynamic-body
+		       constraint="type: lock;
+				   target: #lock-target;
+				   maxForce: 100">
+		</a-box>
       </a-entity>
 					 
 	    <!-- freewheel working with click-impulse from mouse-->
