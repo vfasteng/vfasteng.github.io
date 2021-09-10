@@ -226,24 +226,25 @@
 		    
 	</a-assets>
 	
-		<a-entity gltf-model="#g05" position="0 2 0" rotation="0 0 -90" scale="1 1 1" material="color: yellow" static-body
+		
+				<a-entity position="0 3 0" rotation="0 0 0">
+					<a-entity gltf-model="#g20" position="0 0 0" rotation="0 0 0" scale="1 1 1" material="color: yellow" static-body
 					      animation__rotation="property: rotation; dir: forward; dur: 1000;
 						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
 					  ></a-entity>
-				<a-entity position="0 3 0" rotation="0 0 0">
-					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
-
-					</a-cylinder>
-					<a-entity gltf-model="#g05" position="0 0 0" rotation="0 0 -90" scale="1 1 1" material="color: yellow"
-						  dynamic-body click-impulse
+					<a-sphere id="sprot" radius="0.1" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body
+					  ></a-sphere>
+					<a-entity gltf-model="#g19" position="0 0 0" rotation="0 0 0" scale="1 1 1" material="color: yellow"
+						  dynamic-body
 						    constraint="type: hinge;
-						   target: #hinge4-target;
+						   target: #sprot;
 						   axis: 0 1 0;
 						   targetAxis: 0 1 0;
 						   pivot: 0 0 0;
-						   targetPivot: 0 0.5 0;"></a-entity>
-
+						   targetPivot: 0 5 0;">
 					</a-entity>
+
+				</a-entity>
 		
 		
 		<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
