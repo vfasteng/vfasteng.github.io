@@ -223,11 +223,11 @@
 			<a-asset-item id="blueglbuj" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblue.glb?v=1623936011050"></a-asset-item>
 			
 			<a-asset-item id="ttbleci" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fturntable2ci.glb?v=1622008262714"></a-asset-item>
+			<a-asset-item id="tetraglb" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>"></a-asset-item>
 			
 		    
 	</a-assets>
-	
-		<a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body scale="10 10 10"></a-entity>
+		<a-entity gltf-model="#ttbleci" position="3.5 2 0" static-body scale="10 10 10" click-impulse></a-entity>
 	
 		
 				<a-entity position="0 0 0" rotation="0 0 0">
@@ -249,7 +249,7 @@
 
 				</a-entity>
 		
-		<a-entity id="#buggie" position="1 5 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse >
+		<a-entity id="#buggie" position="1 5 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
 			<a-entity gltf-model="#g15" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse >
 				<a-entity gltf-model="#g14" position="3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
 				<a-entity gltf-model="#g14" position="-3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
