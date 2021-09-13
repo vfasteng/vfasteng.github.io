@@ -128,7 +128,7 @@
 
         </div>
     <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="debug: false; friction: 0.1; restitution: 0.5">
-	<a-box id="grnd" position="0 -.1 0" width="100" depth="100" height=".2" visible="false"></a-box>
+	<a-box id="grnd" position="0 -.1 0" width="1000" depth="1000" height=".2" visible="false"></a-box>
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
             <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
@@ -188,7 +188,7 @@
             <a-asset-item id="g17" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FAssembl.glb?v=1629809466565"></a-asset-item>
             <a-asset-item id="g18" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fprt1.glb?v=1629868513557"></a-asset-item>
             <a-asset-item id="g19" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F32gstub.glb?v=1607763569844"></a-asset-item>
-            <a-asset-item id="g20" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F16gstub.glb?v=1607763543158"></a-asset-item>     
+            <a-asset-item id="g20" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fseat.glb?v=1631545223024"></a-asset-item>     
 	    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                      hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -250,14 +250,20 @@
 				</a-entity>
 		
 		<a-entity id="#buggie" position="1 5 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-			<a-entity gltf-model="#g15" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse >
-				<a-entity gltf-model="#g14" position="3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g14" position="-3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g14" position="3.5 5 1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g14" position="-3.5 5 1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+			<a-entity gltf-model="#g15" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
+				<a-entity gltf-model="#g01" position="3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g01" position="-3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g01" position="3.5 5 1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g01" position="-3.5 5 1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
 		
 			</a-entity>
+			<a-entity id="#jetseats" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
+				<a-entity gltf-model="#g13" position="0 3.5 -1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g13" position="0 3.5 1.50" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g20" position="0 2 0.5" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
+				<a-entity gltf-model="#g20" position="0 2 -0.5" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
 		
+			</a-entity>
 		</a-entity>
 		<a-entity gltf-model="#g06" position="-1 5 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse ></a-entity>
 		
