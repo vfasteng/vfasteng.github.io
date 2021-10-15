@@ -161,7 +161,7 @@
       
 
         </div>
-    <a-scene ground="preset: contact; visible:false;" physics="debug: false; friction: 0.1; restitution: 0.5">
+    <a-scene physics="debug: false; friction: 0.1; restitution: 0.5">
 	<a-box id="grnd" position="0 -.001 0" width="1000" depth="1000" height=".002" visible="false"></a-box>
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
