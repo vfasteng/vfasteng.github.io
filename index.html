@@ -227,86 +227,48 @@
 			
 		    
 	</a-assets>
-		<a-entity gltf-model="#g01" position="0 2 0" rotation="0 0 0" static-body scale="5 5 5" 
-			  animation__rotation="property: rotation; dir: alternate; dur: 1000;
-						repeat: indefinite; easing: linear; loop: true; to: 0 45 0"
-					  ></a-entity>
 		
-				<a-entity position="0 0 0" rotation="0 0 0">
-					<a-entity gltf-model="#g20" position="0 0 0" rotation="0 0 0" scale="10 10 10" material="color: yellow" static-body
-					      animation__rotation="property: rotation; dir: alternate; dur: 1000;
-						repeat: indefinite; easing: linear; loop: true; to: 0 360 0"
-					  ></a-entity>
-					<a-sphere id="sprot" radius="0.1" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body
-					  ></a-sphere>
-					<a-entity gltf-model="#g19" position="0 0 0" rotation="0 0 0" scale="10 10 10" material="color: yellow"
-						  dynamic-body
-						    constraint="type: hinge;
-						   target: #sprot;
-						   axis: 0 1 0;
-						   targetAxis: 0 1 0;
-						   pivot: 0 0 0;
-						   targetPivot: 0 0 0;">
-					</a-entity>
-
-				</a-entity>
-		<!--
-		<a-entity id="#buggie" position="1 5 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-			<a-entity gltf-model="#g15" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-				<a-entity gltf-model="#g01" position="3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g01" position="-3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g01" position="3.5 5 1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g01" position="-3.5 5 1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-		
-			</a-entity>
-			<a-entity id="#jetseats" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-				<a-entity gltf-model="#g13" position="0 3.5 -1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g13" position="0 3.5 1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g20" position="0 2 0.5" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g20" position="0 2 -0.5" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-		
-			</a-entity>
-		</a-entity>
-		-->
-		<a-entity id="#buggielive" position="1 5 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-			<a-entity gltf-model="#g15" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-				<a-entity gltf-model="#g05" position="3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" static-body model-center="bottomAlign:true" click-impulse ></a-entity>
-				<a-entity gltf-model="#g05" position="-3.5 5 -1.50" rotation="0 0 0" scale="1 1 1" static-body model-center="bottomAlign:true" click-impulse ></a-entity>
-				<a-entity gltf-model="#g05" position="3.5 5 1.50" rotation="0 0 0" scale="1 1 1" static-body model-center="bottomAlign:true" click-impulse ></a-entity>
-				<a-entity gltf-model="#g05" position="-3.5 5 1.50" rotation="0 0 0" scale="1 1 1" static-body model-center="bottomAlign:true" click-impulse ></a-entity>
-		
-			</a-entity>
-			<a-entity id="#jetseats" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-				<a-entity gltf-model="#g13" position="0 3.5 -1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g13" position="0 3.5 1.50" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g20" position="0 2 0.5" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-				<a-entity gltf-model="#g20" position="0 2 -0.5" rotation="0 0 0" scale="1 1 1" static-body click-impulse ></a-entity>
-		
-			</a-entity>
-		</a-entity>
 	    
-	    <a-entity id="ladder" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body click-impulse >
-				<a-entity mixin="cube" position="0 0.25 0" rotation="0 0 0" scale="1 .1 .1" static-body click-impulse ></a-entity>
-				<a-entity mixin="cube" position="0 -0.25 0" rotation="0 0 0" scale="1 .1 .1" static-body click-impulse ></a-entity>
-				<a-entity mixin="cube" position="0.5 0 0" rotation="0 0 90" scale=".1 1 .1" static-body click-impulse ></a-entity>
-				<a-entity mixin="cube" position="-0.5 0 0" rotation="0 0 90" scale=".1 1 .1" static-body click-impulse ></a-entity>
-				
-		    
-		    
+	    
+	    
+	    
+	    
+	    
+	    <!--cadboxx with planes-->
+		<a-entity id="planeboxx" position="0 0 0">
+			<a-entity id="planebox" position="0 0 0" gridhelper="size:10;divisions:10">
+				<a-plane side="double" color="green" position="0 -7.5 0" rotation="-90 0 0" height="15" width="15"></a-plane>
+				<a-plane side="double" color="green" position="0 7.5 0" rotation="-90 0 0" height="15" width="15"></a-plane>
+				<a-plane side="double" color="blue" position="0 0 7.5" rotation="0 0 0" height="15" width="15"></a-plane>
+				<a-plane side="double" color="blue" position="0 0 -7.5" rotation="0 0 0" height="15" width="15"></a-plane>
+				<a-plane side="double" color="red" position="7.5 0 0" rotation="0 -90 0" height="15" width="15"></a-plane>
+				<a-plane side="double" color="red" position="-7.5 0 0" rotation="0 90 0" height="15" width="15"></a-plane>
 			</a-entity>
+			<a-entity id="planeinner" position="0 0 0">
+				<a-plane side="double" color="yellow" position="0 -7.45 0" rotation="-90 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 7.45 0" rotation="-90 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 0 7.45" rotation="0 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 0 -7.45" rotation="0 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="7.45 0 0" rotation="0 -90 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="-7.45 0 0" rotation="0 90 0" height="10" width="10"></a-plane>
+			</a-entity>
+			<a-entity id="planeouter" position="0 0 0">
+				<a-plane side="double" color="yellow" position="0 -7.55 0" rotation="-90 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 7.55 0" rotation="-90 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 0 7.55" rotation="0 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="0 0 -7.55" rotation="0 0 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="7.55 0 0" rotation="0 -90 0" height="10" width="10"></a-plane>
+				<a-plane side="double" color="yellow" position="-7.55 0 0" rotation="0 90 0" height="10" width="10"></a-plane>
+			</a-entity>
+			<a-cylinder position="0 -0.1 0" rotation="0 0 0" radius="7.25" height="0.2" color="lightblue" opacity=".25"></a-cylinder>
+
+		</a-entity>
 	    
 		<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
-
 		<a-entity>
 			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 7.5; initialPosition: 5 0 7.5"><a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-     			
-			</a-entity>
-		</a-entity>
-	     
-	     
-	     
-	     
-	  
+     			</a-entity>
+		</a-entity>  
 	    <!--<a-entity position="0 0 5">
 		  <a-camera extras.controls look-controls wasd-controls></a-camera>
 	  </a-entity> -->
