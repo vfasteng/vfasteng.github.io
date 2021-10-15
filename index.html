@@ -23,26 +23,60 @@
 	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-system/dist/aframe-physics-system.min.js"></script>
-    <script>
-      AFRAME.registerComponent('click-impulse', {
-        init: function () {
-          var el = this.el;
-          
-          el.addEventListener('click', function () {
-            el.body.applyImpulse(
-            /* impulse */
-            new CANNON.Vec3(
-             THREE.Math.randInt(-20, 20),
-             THREE.Math.randInt(-20, 20),
-             THREE.Math.randInt(-20, 20)
-            ),
-            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
-            ); 
-          });
-          
-        }
-      });
-    </script>
+    <script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+	<script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+	<script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+	<script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+	<!--<script src="~/js/play-all-model-animations.js"></script>
+	<script src="../dist/aframe-gui.min.js"></script>
+	<script src="../dist/aframe-gui.js"></script>-->
+	<script src="https://rawgit.com/andreasplesch/aframe-faceset-component/master/dist/aframe-faceset-component.min.js"></script>
+	<script src="https://rawgit.com/andreasplesch/aframe-polygon-primitive/master/dist/aframe-polygon-primitive.min.js"></script>
+	<script src="https://unpkg.com/aframe-cursor-teleport-component@1.0.0/dist/aframe-cursor-teleport-component.min.js"></script>
+
+	<script>
+		AFRAME.registerComponent('click-impulse', {
+			init: function () {
+				var el = this.el;
+
+				el.addEventListener('click', function () {
+					el.body.applyImpulse(
+						/* impulse */
+						new CANNON.Vec3(
+							THREE.Math.randInt(-20, 20),
+							THREE.Math.randInt(-20, 20),
+							THREE.Math.randInt(-20, 20)
+						),
+									/* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+					);
+				});
+
+			}
+		});
+
+		-// forward mouse and touch events to the super-hands entity
+			AFRAME.registerComponent('capture-mouse', {
+				init: function () {
+					this.eventRepeater = this.eventRepeater.bind(this)
+					this.el.sceneEl.addEventListener('loaded', () => {
+						this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+						this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+						this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+						this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+						this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+					}, { once: true })
+				},
+				eventRepeater: function (evt) {
+					if (evt.type.startsWith('touch')) {
+						evt.preventDefault()
+						// avoid repeating touchmove because it interferes with look-controls
+						if (evt.type === 'touchmove') { return }
+					}
+					this.el.emit(evt.type, evt.detail)
+				}
+			})
+	</script>
     <!--constrain-->
     <script src="aframe-ammo-constraints.js"></script>
     <script src="aframe-curve-component.js"></script>
@@ -127,7 +161,7 @@
       
 
         </div>
-    <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="debug: false; friction: 0.1; restitution: 0.5">
+    <a-scene ground="preset: contact; ground: flat; visibility:false; dressingAmount: 0" physics="debug: false; friction: 0.1; restitution: 0.5">
 	<a-box id="grnd" position="0 -.1 0" width="1000" depth="1000" height=".2" visible="false"></a-box>
 	<a-assets>
 		<a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
@@ -228,7 +262,12 @@
 		    
 	</a-assets>
 		
-	    
+	    <a-sphere position="0 1 0" color="lightgreen" click-impulse dynamic-body></a-sphere>
+	    <a-sphere position="0 2 0" color="white" click-impulse dynamic-body ></a-sphere>
+	    <a-sphere position="0 3 0" color="lightgreen" click-impulse dynamic-body ></a-sphere>
+	    <a-sphere position="0 4 0" color="white" click-impulse dynamic-body ></a-sphere>
+	    <a-sphere position="0 5 0" color="lightgreen" click-impulse dynamic-body ></a-sphere>
+	    <a-sphere position="0 6 0" color="white" click-impulse dynamic-body  ></a-sphere>
 	    
 	    
 	    
