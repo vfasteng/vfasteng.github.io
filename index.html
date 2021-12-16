@@ -279,33 +279,41 @@
 	    
 	    
 	    
-	    <!--cadboxx with planes--
-		<a-entity id="planeboxx" position="0 0 0">
-			<a-entity id="planebox" position="0 0 0" gridhelper="size:10;divisions:10">
-				<a-plane side="double" color="green" position="0 -7.5 0" rotation="-90 0 0" height="15" width="15"></a-plane>
-				<a-plane side="double" color="green" position="0 7.5 0" rotation="-90 0 0" height="15" width="15"></a-plane>
-				<a-plane side="double" color="blue" position="0 0 7.5" rotation="0 0 0" height="15" width="15"></a-plane>
-				<a-plane side="double" color="blue" position="0 0 -7.5" rotation="0 0 0" height="15" width="15"></a-plane>
-				<a-plane side="double" color="red" position="7.5 0 0" rotation="0 -90 0" height="15" width="15"></a-plane>
-				<a-plane side="double" color="red" position="-7.5 0 0" rotation="0 90 0" height="15" width="15"></a-plane>
-			</a-entity>
-			<a-entity id="planeinner" position="0 0 0">
-				<a-plane side="double" color="yellow" position="0 -7.45 0" rotation="-90 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 7.45 0" rotation="-90 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 0 7.45" rotation="0 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 0 -7.45" rotation="0 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="7.45 0 0" rotation="0 -90 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="-7.45 0 0" rotation="0 90 0" height="10" width="10"></a-plane>
-			</a-entity>
-			<a-entity id="planeouter" position="0 0 0">
-				<a-plane side="double" color="yellow" position="0 -7.55 0" rotation="-90 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 7.55 0" rotation="-90 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 0 7.55" rotation="0 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="0 0 -7.55" rotation="0 0 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="7.55 0 0" rotation="0 -90 0" height="10" width="10"></a-plane>
-				<a-plane side="double" color="yellow" position="-7.55 0 0" rotation="0 90 0" height="10" width="10"></a-plane>
-			</a-entity>
-		</a-entity>-->
+	    <!--cadboxx with planes-->
+<a-entity id="boxx" position="0 0 0">
+	<a-entity id="boxx-outers" position="0 0 0" rotation="0 0 0" >
+                <a-box id="b1" position="0 10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
+				
+                <a-box id="b2" position="0 -10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
+                <a-box id="b3" position="10.5 0 0" color="red" width="1.0" height="20" depth="20" opacity="1"></a-box>
+                <a-box id="b4" position="-10.5 0 0" color="red" width="1.0" height="20" depth="20" opacity="1"></a-box>
+                <a-box id="b5" position="0 0 10.5" color="blue" width="20" height="20.0" depth="1" opacity="1"></a-box>
+                <a-box id="b6" position="0 0 -10.5" color="blue" width="20" height="20.0" depth="1" opacity="1"></a-box>
+
+        </a-entity>
+
+	<a-entity id="boxx-inners" position="0 0 0" rotation="0 0 0" >
+                <a-box id="b11" position="0 9.5 0" color="yellow" width="15" height=".5" depth="15" opacity="1"></a-box>
+				
+                <a-box id="b21" position="0 -9.5 0" color="yellow" width="15" height=".5" depth="15" opacity="1"></a-box>
+                <a-box id="b31" position="9.5 0 0" color="yellow" width=".5" height="15" depth="15" opacity="1"></a-box>
+                <a-box id="b41" position="-9.5 0 0" color="yellow" width=".5" height="15" depth="15" opacity="1"></a-box>
+                <a-box id="b51" position="0 0 9.5" color="yellow" width="15" height="15.0" depth=".5" opacity="1"></a-box>
+                <a-box id="b61" position="0 0 -9.5" color="yellow" width="15" height="15.0" depth=".5" opacity="1"></a-box>
+
+        </a-entity>
+		
+	<a-entity id="boxx-spinners" position="0 0 0" rotation="0 0 0" >
+                <a-box id="b111" position="0 8.5 0" color="green" width="10" height=".5" depth="10" opacity="1"></a-box>
+				
+                <a-box id="b211" position="0 -8.5 0" color="green" width="10" height=".5" depth="10" opacity="1"></a-box>
+                <a-box id="b311" position="8.5 0 0" color="red" width=".5" height="10" depth="10" opacity="1"></a-box>
+                <a-box id="b411" position="-8.5 0 0" color="red" width=".5" height="10" depth="10" opacity="1"></a-box>
+                <a-box id="b511" position="0 0 8.5" color="blue" width="10" height="10.0" depth=".5" opacity="1"></a-box>
+                <a-box id="b611" position="0 0 -8.5" color="blue" width="10" height="10.0" depth=".5" opacity="1"></a-box>
+
+        </a-entity>
+		</a-entity>
 		<a-entity gltf-model="#cadboxx-std" position="0 0 0">
 			<a-box position="0 -0.1 0" rotation="0 0 0" width="10.0" depth="10.0" height="0.2" color="lightblue" opacity=".25"></a-cylinder>
 
@@ -313,7 +321,7 @@
 	    
 		<a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
 		<a-entity>
-			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 7.5; initialPosition: 5 0 7.5"><a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+			<a-entity camera look-controls orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 7.5; initialPosition: 5 0 5"><a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
      			</a-entity>
 		</a-entity>  
 	    <!--<a-entity position="0 0 5">
