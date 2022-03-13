@@ -56,14 +56,14 @@
 	<link rel="stylesheet" type="text/css" href="aframe.css">
 	
 	<!-- controls for placing models--see gltf-helpers:bottomAlign: true-->
-	<script id="tool" src="~/js/aframe-tool-component.js"></script>
-	<script id="snap" src="~/js/snap.js"></script>
-	<script id="grab" src="~/js/grab-lock.js"></script>
-	<script id="physgrab" src="~/js/PhysicsGrab.js"></script>
-	<script id="crecon" src="~/js/createConstraint.js"></script>
-	<script id="devv" src="~/js/aframe-dev-components.min.js"></script>
-	<script id="gload" src="~/js/gltfLoader.js"></script>
-    <script id="part" src="~/js/GLTFPart.js"></script>
+	<script id="tool" src="~/aframe-tool-component.js"></script>
+	<script id="snap" src="~/snap.js"></script>
+	<script id="grab" src="~/grab-lock.js"></script>
+	<script id="physgrab" src="~/PhysicsGrab.js"></script>
+	<script id="crecon" src="~/createConstraint.js"></script>
+	<script id="devv" src="~/aframe-dev-components.min.js"></script>
+	<script id="gload" src="~/gltfLoader.js"></script>
+    <script id="part" src="~/GLTFPart.js"></script>
         
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
@@ -301,16 +301,16 @@
 </div>
 <a-scene>
 	<a-assets>
-		<a-asset-item id="prt1" src="#"></a-asset-item>
-		<a-asset-item id="prt2" src="#"></a-asset-item>
-		<a-asset-item id="prt3" src="#"></a-asset-item>
-		<a-asset-item id="prt4" src="#"></a-asset-item>
-		<a-asset-item id="prt5" src="#"></a-asset-item>
-		<a-asset-item id="prt6" src="#"></a-asset-item>
-		<a-asset-item id="prt7" src="#"></a-asset-item>
-		<a-asset-item id="prt8" src="#"></a-asset-item>
-		<a-asset-item id="prt9" src="#"></a-asset-item>
-		<a-asset-item id="prt0" src="#"></a-asset-item>
+		<a-asset-item id="prt01" src="#gg019"></a-asset-item>
+		<a-asset-item id="prt02" src="#gg020"></a-asset-item>
+		<a-asset-item id="prt03" src="#gg021"></a-asset-item>
+		<a-asset-item id="prt04" src="#gg022"></a-asset-item>
+		<a-asset-item id="prt05" src="#gg023"></a-asset-item>
+		<a-asset-item id="prt06" src="#gg024"></a-asset-item>
+		<a-asset-item id="prt07" src="#gg025"></a-asset-item>
+		<a-asset-item id="prt08" src="#"></a-asset-item>
+		<a-asset-item id="prt09" src="#"></a-asset-item>
+		<a-asset-item id="prt00" src="#"></a-asset-item>
 		
 		<a-mixin id="mix01" src="#"></a-mixin>
 		<a-mixin id="mix02" src="#"></a-mixin>
@@ -332,58 +332,50 @@
 			<a-asset-item id="116" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F116.glb?v=1608589976641"></a-asset-item>
 			<a-asset-item id="117" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F117.glb?v=1608590067493"></a-asset-item>
 			<a-asset-item id="cadboxx-std" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
-			<a-asset-item id="cadboxx-three" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxxthree.glb?v=1618302772439"></a-asset-item>
+			<a-asset-item id="sixcols" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixcols.glb?v=1605682333709"></a-asset-item>
 
 			<!---<a-asset-item id="" src=""></a-asset-item>--
 			<img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftexture.PNG?v=1633143378841">
-			<a-asset-item id="gg01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplaneboxx.glb?v=1633143544885"></a-asset-item>
-			<a-asset-item id="gg02" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgreen-jeep.glb?v=1634979382666"></a-asset-item>
-			<a-asset-item id="gg03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblack-tyre.glb?v=1633144010822"></a-asset-item>
-			<a-asset-item id="gg04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcccpin.glb?v=1632902439472"></a-asset-item>
-			<a-asset-item id="gg05" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6waypin.glb?v=1633418714106"></a-asset-item>
-			<a-asset-item id="gg06" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"></a-asset-item>
-			<a-asset-item id="gg07" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"></a-asset-item>
-			<a-asset-item id="gg08" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Faxle1sq1.glb?v=1635660105710"></a-asset-item>
-			<a-asset-item id="gg09" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fhand.glb?v=1635661031408"></a-asset-item>
-			<a-asset-item id="gg010" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbignsmall.glb?v=1635661253048"></a-asset-item>
-			<a-asset-item id="gg011" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fmiddle.glb?v=1635661365123"></a-asset-item>
-			<a-asset-item id="gg012" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftip.glb?v=1635661448663"></a-asset-item>
-			<a-asset-item id="gg013" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"></a-asset-item>
-			<a-asset-item id="gg014" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
--->
-<img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftexture.PNG?v=1633143378841">
-			<a-asset-item id="gg01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixcols.glb?v=1605682333709"></a-asset-item>
-			<a-asset-item id="gg02" src="#"></a-asset-item>
-			<a-asset-item id="gg03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblack-tyre.glb?v=1633144010822"></a-asset-item>
-			<a-asset-item id="gg04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcccpin.glb?v=1632902439472"></a-asset-item>
-			<a-asset-item id="gg05" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6waypin.glb?v=1633418714106"></a-asset-item>
-			<a-asset-item id="gg06" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"></a-asset-item>
-			<a-asset-item id="gg07" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"></a-asset-item>
-			<a-asset-item id="gg08" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Faxle1sq1.glb?v=1635660105710"></a-asset-item>
-			<a-asset-item id="gg09" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fhand.glb?v=1635661031408"></a-asset-item>
-			<a-asset-item id="gg010" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbignsmall.glb?v=1635661253048"></a-asset-item>
-			<a-asset-item id="gg011" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fmiddle.glb?v=1635661365123"></a-asset-item>
-			<a-asset-item id="gg012" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftip.glb?v=1635661448663"></a-asset-item>
-			<a-asset-item id="gg013" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"></a-asset-item>
-			<a-asset-item id="gg014" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
-			<a-asset-item id="gg015" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fshaftflange.glb?v=1636527093706"></a-asset-item>
-			<a-asset-item id="gg016" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fholedflange.glb?v=1636526609824"></a-asset-item>
-			<a-asset-item id="gg017" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdiff-case.glb?v=1636526344334"></a-asset-item>
-			<a-asset-item id="gg018" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fhalfl.glb?v=1636526496208"></a-asset-item>
-			<a-asset-item id="gg019" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgearboxx.glb?v=1636526208096"></a-asset-item>
-			<a-asset-item id="gg020" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbobpin.glb?v=1636534604646"></a-asset-item>
-			<a-asset-item id="gg021" src="#"></a-asset-item>
-			<a-asset-item id="gg022" src="#"></a-asset-item>
-			<a-asset-item id="gg023" src="#"></a-asset-item>
-			<a-asset-item id="gg024" src="#"></a-asset-item>
-			<a-asset-item id="gg025" src="#"></a-asset-item>
-			<a-asset-item id="gg026" src="#"></a-asset-item>
+            <a-asset-item id="gg01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplaneboxx.glb?v=1633143544885"> </a-asset-item>
+            <a-asset-item id="gg02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/red-jeep.glb?v=1645879468782"> </a-asset-item>
+            <a-asset-item id="gg03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblack-tyre.glb?v=1633144010822"> </a-asset-item>
+            <a-asset-item id="gg04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcccpin.glb?v=1632902439472"> </a-asset-item>
+            <a-asset-item id="gg05" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6waypin.glb?v=1633418714106"> </a-asset-item>
+            <a-asset-item id="gg06" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"> </a-asset-item>
+            <a-asset-item id="gg07" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"> </a-asset-item>
+            <a-asset-item id="gg08" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Faxle1sq1.glb?v=1635660105710"> </a-asset-item>
+            <a-asset-item id="gg09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcalliper.glb?v=1613374860972"> </a-asset-item>
+            <a-asset-item id="gg010" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbrakedisc.glb?v=1613374881978"> </a-asset-item>
+            <a-asset-item id="gg011" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fmiddle.glb?v=1635661365123"> </a-asset-item>
+            <a-asset-item id="gg012" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftip.glb?v=1635661448663"> </a-asset-item>
+            <a-asset-item id="gg013" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"> </a-asset-item>
+            <a-asset-item id="gg014" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F4centersx2.glb?v=1637931324606"> </a-asset-item>
+            <a-asset-item id="gg015" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fshaftflange.glb?v=1636527093706"> </a-asset-item>
+            <a-asset-item id="gg016" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fholedflange.glb?v=1636526609824"> </a-asset-item>
+            <a-asset-item id="gg017" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"> </a-asset-item>
+            <a-asset-item id="gg018" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607"> </a-asset-item>
+            <a-asset-item id="gg019" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt1.glb?v=1645431919700"> </a-asset-item>
+            <a-asset-item id="gg020" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt2.glb?v=1645431938106"> </a-asset-item>
+            <a-asset-item id="gg021" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt3.glb?v=1645431948042"> </a-asset-item>
+            <a-asset-item id="gg022" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt4.glb?v=1645431961036"> </a-asset-item>
+            <a-asset-item id="gg023" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt5.glb?v=1645432000985"> </a-asset-item>
+            <a-asset-item id="gg024" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt6.glb?v=1645432010177"> </a-asset-item>
+            <a-asset-item id="gg025" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/prt7.glb?v=1645432030318"> </a-asset-item>
+            <a-asset-item id="gg026" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3b-pin.glb?v=1638955130471"> </a-asset-item>
+            <a-asset-item id="gg027" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F4b-pin.glb?v=1638955159308"> </a-asset-item>
+            <a-asset-item id="gg028" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F5b-pin.glb?v=1638955214487"> </a-asset-item>
+            <a-asset-item id="gg029" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fball-s.glb?v=1638961392053"> </a-asset-item>
+            <a-asset-item id="gg030" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fball-rod.glb?v=1638955578146"> </a-asset-item>
 
 
-			<a-asset-item id="chlink1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink1.glb?v=1606822463366"></a-asset-item>
-			<a-asset-item id="chlink2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink2.glb?v=1606822434718"></a-asset-item>
-			<a-asset-item id="layplane" geometry="primitive: plane; side: double; material.color:red; material.wireframe:true;"></a-asset-item>
-			<a-mixin id="gltf-util" gltf-helpers="buffer:false; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
+
+            <a-asset-item id="chlink1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink1.glb?v=1606822463366"></a-asset-item>
+            <a-asset-item id="chlink2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink2.glb?v=1606822434718"></a-asset-item>
+            <a-asset-item id="layplane" geometry="primitive: plane; side: double; material.color:red; material.wireframe:true;"></a-asset-item>
+            <a-mixin id="gltf-util" gltf-helpers="buffer:false; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
+            <a-asset-item id="glbplane" src="../planex1sq.glb"></a-asset-item>
+            <a-asset-item id="sixboxx" src="../sixboxx.glb"></a-asset-item>
+            <a-mixin id="boxx" model-center="bottomAlign:true" dynamic-body click-impulse></a-mixin>
 
 			<!---->
 			<a-mixin id="gltf-util-1" gltf-helpers="buffer:false; name:<prt1>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
@@ -497,7 +489,7 @@
 	<a-entity id="assy-planes" position="0 2.5 0" rotation="-90 0 0" layout="type: circle; radius: 2.5">
 		<a-entity id="prt01" >
 			<a-plane id="pl1" side="double" color="black" rotation="0 0 0">
-				<a-entity gltf-model="#gg01" position="0 0 0"></a-entity>
+				<a-entity gltf-model="#gg01" position="0 0 0" mixin="boxx" ></a-entity>
 			</a-plane>
 		</a-entity>
                 <a-plane id="pl2" side="double" color="black" rotation="0 0 40"></a-plane>
