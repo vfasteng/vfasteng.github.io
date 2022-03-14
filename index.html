@@ -56,14 +56,14 @@
 	<link rel="stylesheet" type="text/css" href="aframe.css">
 	
 	<!-- controls for placing models--see gltf-helpers:bottomAlign: true-->
-	<script id="tool" src="~/aframe-tool-component.js"></script>
-	<script id="snap" src="~/snap.js"></script>
-	<script id="grab" src="~/grab-lock.js"></script>
-	<script id="physgrab" src="~/PhysicsGrab.js"></script>
-	<script id="crecon" src="~/createConstraint.js"></script>
-	<script id="devv" src="~/aframe-dev-components.min.js"></script>
-	<script id="gload" src="~/gltfLoader.js"></script>
-    <script id="part" src="~/GLTFPart.js"></script>
+	<script id="tool" src="~/js/aframe-tool-component.js"></script>
+	<script id="snap" src="~/js/snap.js"></script>
+	<script id="grab" src="~/js/grab-lock.js"></script>
+	<script id="physgrab" src="~/js/PhysicsGrab.js"></script>
+	<script id="crecon" src="~/js/createConstraint.js"></script>
+	<script id="devv" src="~/js/aframe-dev-components.min.js"></script>
+	<script id="gload" src="~/js/gltfLoader.js"></script>
+    <script id="part" src="~/js/GLTFPart.js"></script>
         
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
@@ -334,22 +334,22 @@
 			<a-asset-item id="cadboxx-std" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
 			<a-asset-item id="sixcols" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsixcols.glb?v=1605682333709"></a-asset-item>
 
-			<!---<a-asset-item id="" src=""></a-asset-item>--
+			<!--<a-asset-item id="" src=""></a-asset-item>-->
 			<img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftexture.PNG?v=1633143378841">
             <a-asset-item id="gg01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplaneboxx.glb?v=1633143544885"> </a-asset-item>
             <a-asset-item id="gg02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/red-jeep.glb?v=1645879468782"> </a-asset-item>
             <a-asset-item id="gg03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fblack-tyre.glb?v=1633144010822"> </a-asset-item>
-            <a-asset-item id="gg04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcccpin.glb?v=1632902439472"> </a-asset-item>
+            <a-asset-item id="gg04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FPiston_.glb?v=1603793459228"> </a-asset-item>
             <a-asset-item id="gg05" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F6waypin.glb?v=1633418714106"> </a-asset-item>
             <a-asset-item id="gg06" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"> </a-asset-item>
             <a-asset-item id="gg07" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"> </a-asset-item>
             <a-asset-item id="gg08" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Faxle1sq1.glb?v=1635660105710"> </a-asset-item>
             <a-asset-item id="gg09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcalliper.glb?v=1613374860972"> </a-asset-item>
             <a-asset-item id="gg010" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbrakedisc.glb?v=1613374881978"> </a-asset-item>
-            <a-asset-item id="gg011" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fmiddle.glb?v=1635661365123"> </a-asset-item>
-            <a-asset-item id="gg012" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftip.glb?v=1635661448663"> </a-asset-item>
-            <a-asset-item id="gg013" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foctahedron.glb?v=1634979729438"> </a-asset-item>
-            <a-asset-item id="gg014" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F4centersx2.glb?v=1637931324606"> </a-asset-item>
+            <a-asset-item id="gg011" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FOneLink.glb?v=1606803487600"> </a-asset-item>
+            <a-asset-item id="gg012" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/bevel_yellow.glb?v=1647170164455"> </a-asset-item>
+            <a-asset-item id="gg013" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/beve%C3%B1_red.glb?v=1647170119984"> </a-asset-item>
+            <a-asset-item id="gg014" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fseat.glb?v=1631545223024"> </a-asset-item>
             <a-asset-item id="gg015" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fshaftflange.glb?v=1636527093706"> </a-asset-item>
             <a-asset-item id="gg016" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fholedflange.glb?v=1636526609824"> </a-asset-item>
             <a-asset-item id="gg017" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"> </a-asset-item>
@@ -541,7 +541,7 @@
                         flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="3.0" height="8.5" 
                         panel-color="#072B73" 
                         panel-rounded="0.2"
-                        position="2.5 0 -6" rotation="0 0 0">
+                        position="2.5 0 -8" rotation="0 0 0">
 			<a-gui-radio 
 			width="2.0" height="0.65"
 			onclick="toggleActionFunction"
@@ -628,7 +628,7 @@
                         flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="2.5" height="8.5" 
                         panel-color="#072B73" 
                         panel-rounded="0.2"
-                                position="-0.5 0 -6" rotation="0 0 0">
+                                position="-0.5 0 -8" rotation="0 0 0">
                                 
 				
 			
@@ -718,7 +718,7 @@
                         flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="2.0" height="8.5" 
                         panel-color="#072B73" 
                         panel-rounded="0.2"
-                                position="-3.0 0 -6" rotation="0 0 0">
+                                position="-3.0 0 -8" rotation="0 0 0">
                         <a-gui-button mouse-cursor
 		width="1.5" 
 		height="0.7" 
