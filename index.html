@@ -8,9 +8,6 @@
 	<script src="https://unpkg.com/aframe-layout-component@4.3.1/dist/aframe-layout-component.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 	<script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
-	<!--Just include the toolkit js file from a CDN--
-	<script src="https://unpkg.com/aframe-vartiste-toolkit@latest/vartiste-toolkit.js"></script>
-	-->
 	<script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
 	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 	<script src="https://unpkg.com/aframe-datgui-component/dist/aframe-datgui-component.min.js"></script>
@@ -30,7 +27,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/web2vr@1.0.0/dist/web2vr.min.js"></script>
 	<script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
 
-	<!--extras--
+	<!--extras
 	<script src="js/aframe-master.min.js"></script>WONT RUN IF YOU REF IT HERE  BUT IT IS THERE-->
 	<script src="js/aframe-extras.min.js"></script>
 	<script src="js/aframe-extras.controls.mih.js"></script>
@@ -377,7 +374,7 @@
             <a-asset-item id="sixboxx" src="../sixboxx.glb"></a-asset-item>
             <a-mixin id="boxx" model-center="bottomAlign:true" dynamic-body click-impulse></a-mixin>
 
-			<!---->
+			<!--
 			<a-mixin id="gltf-util-1" gltf-helpers="buffer:false; name:<prt1>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
 			<a-mixin id="gltf-util-2" gltf-helpers="buffer:false; name:<prt2>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
 			<a-mixin id="gltf-util-3" gltf-helpers="buffer:false; name:<prt3>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
@@ -387,7 +384,7 @@
 			<a-mixin id="gltf-util-7" gltf-helpers="buffer:false; name:<prt7>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
 			<a-mixin id="gltf-util-8" gltf-helpers="buffer:false; name:<prt8>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
 			<a-mixin id="gltf-util-9" gltf-helpers="buffer:false; name:<prt9>; src:selector; resetPosition:true; model-center:bottomAlign:true"></a-mixin>
-
+-->
                <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                                 hoverable grabbable stretchable draggable droppable
                                 dynamic-body shadow>
@@ -457,10 +454,10 @@
 					colliderEndEventProperty: clearedEls;
 					grabStartButtons: gripdown, pointdown, triggerdown;
 					grabEndButtons: gripup, pointup, triggerup"></a-mixin>
-			<!--	 static-body="shape: sphere; sphereRadius: 0.11"
+				        static-body="shape: sphere; sphereRadius: 0.11"
 					 oculus-touch-controls="hand: left" physics-collider
 					 collision-filter="collidesWith: default;" collisionForces="false">
-			-->
+			
 
 			<a-mixin id="constraint_hinge" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
 			<a-mixin id="constraint_distance" constraint="type: distance;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
@@ -486,7 +483,7 @@
 			<img id="im9" src="../images/negz.jpg" />
 	</a-assets>
 	
-	<a-entity id="assy-planes" position="0 2.5 0" rotation="-90 0 0" layout="type: circle; radius: 2.5">
+	<a-entity id="assy-planes" position="0 0 0" rotation="-90 0 0" layout="type: circle; radius: 2.5">
 		<a-entity >
 			<a-plane id="pl1" side="double" material="wireframe:true;color:black" rotation="0 0 0">
 				<a-entity gltf-model="#gg019" position="0 0 0" mixin="boxx" ></a-entity>
@@ -539,8 +536,7 @@
 
         <a-entity id="boxx-outers" position="0 0 0" rotation="0 0 0" >
                 <a-box id="b1" position="0 10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
-				
-                <a-box id="b2" position="0 -10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
+		<a-box id="b2" position="0 -10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
                 <a-box id="b3" position="10.5 0 0" color="red" width="1.0" height="20" depth="20" opacity="1"></a-box>
                 <a-box id="b4" position="-10.5 0 0" color="red" width="1.0" height="20" depth="20" opacity="1"></a-box>
                 <a-box id="b5" position="0 0 10.5" color="blue" width="20" height="20.0" depth="1" opacity="1"></a-box>
@@ -548,10 +544,9 @@
 
         </a-entity>
 
-		<a-entity id="boxx-inners" position="0 0 0" rotation="0 0 0" >
+	<a-entity id="boxx-inners" position="0 0 0" rotation="0 0 0" >
                 <a-box id="b11" position="0 9.5 0" color="yellow" width="15" height=".5" depth="15" opacity="1"></a-box>
-				
-                <a-box id="b21" position="0 -9.5 0" color="yellow" width="15" height=".5" depth="15" opacity="1"></a-box>
+	        <a-box id="b21" position="0 -9.5 0" color="yellow" width="15" height=".5" depth="15" opacity="1"></a-box>
                 <a-box id="b31" position="9.5 0 0" color="yellow" width=".5" height="15" depth="15" opacity="1"></a-box>
                 <a-box id="b41" position="-9.5 0 0" color="yellow" width=".5" height="15" depth="15" opacity="1"></a-box>
                 <a-box id="b51" position="0 0 9.5" color="yellow" width="15" height="15.0" depth=".5" opacity="1"></a-box>
@@ -559,10 +554,9 @@
 
         </a-entity>
 		
-		<a-entity id="boxx-spinners" position="0 0 0" rotation="0 0 0" >
+	<a-entity id="boxx-spinners" position="0 0 0" rotation="0 0 0" >
                 <a-box id="b111" position="0 8.5 0" color="green" width="10" height=".5" depth="10" opacity="1"></a-box>
-				
-                <a-box id="b211" position="0 -8.5 0" color="green" width="10" height=".5" depth="10" opacity="1"></a-box>
+	        <a-box id="b211" position="0 -8.5 0" color="green" width="10" height=".5" depth="10" opacity="1"></a-box>
                 <a-box id="b311" position="8.5 0 0" color="red" width=".5" height="10" depth="10" opacity="1"></a-box>
                 <a-box id="b411" position="-8.5 0 0" color="red" width=".5" height="10" depth="10" opacity="1"></a-box>
                 <a-box id="b511" position="0 0 8.5" color="blue" width="10" height="10.0" depth=".5" opacity="1"></a-box>
