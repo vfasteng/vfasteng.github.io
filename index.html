@@ -533,6 +533,38 @@
                 
         </a-entity>
 	
+	<!-- HINGE PIN working with 2 z-axis wheels-->
+        <a-entity id="caster" position="0 2 -5">
+
+            <a-cylinder id="hinge3-target" position="0 0.1 0 " color="#777" static-body radius="0.5" height="0.1">
+
+            </a-cylinder>
+            <a-entity id="c11" class="cube" mixin="cube" position="0 0 0" material="color: yellow"
+                      constraint="type: hinge;
+                           target: #hinge3-target;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0.1 0;
+                           targetPivot: 0 -0.5 0;"></a-entity>
+							   <a-entity class="cube" mixin="cube" position="0 0 0" material="color: yellow"
+	                      constraint="type: hinge;
+	                           target: #c11;
+	                           axis: 0 0 1;
+	                           targetAxis: 0 0 1;
+	                           pivot: 0 0 0;
+	                           targetPivot: 0 0 1.0"><a-sphere scale=".5 .5 .5" material="wireframe:true;color:blue" position="0 0 0"></a-sphere>
+                  </a-entity>
+								   	<a-entity class="cube" mixin="cube" position="0 0 0" material="color: yellow"
+		                      constraint="type: hinge;
+		                           target: #c11;
+		                           axis: 0 0 1;
+		                           targetAxis: 0 0 1;
+		                           pivot: 0 0 0;
+		                           targetPivot: 0 0 -1.0"> <a-sphere scale=".5 .5 .5" material="wireframe:true;color:blue" position="0 0 0"></a-sphere>
+                               </a-entity>
+		        </a-entity>
+	        </a-entity>
+        </a-entity>
 
         <a-entity id="boxx-outers" position="0 0 0" rotation="0 0 0" >
                 <a-box id="b1" position="0 10.5 0" color="green" width="20" height="1.0" depth="20" opacity="1"></a-box>
