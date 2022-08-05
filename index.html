@@ -1,392 +1,86 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
-    <!--angle spawnpoint pointcloud gltf object-pool ADCONTROLLER gamepad vive gearvr-->
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@333873f3279c8d49881577662e16e51baa480ea3/dist/aframe-master.min.js"></script>
-    <!--super hands-->
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-    <script src="https://rawgit.com/wmurphyrd/aframe-super-hands-component/master/dist/super-hands.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <title>
+        CAD-BOXX.COM
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="logo3.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo3.png">
+</head>
 
-    <script
-      type="text/javascript"
-      src="aframe-pointcloud-component.js"
-    ></script>
-    <!-- ... -->
-    <script
-      type="text/javascript"
-      src="aframe-heightgrid-component.min.js"
-    ></script>
-    <!-- ... -->
-    <script type="text/javascript" src="aframe-extras.misc.min.js"></script>
-    <!-- ... -->
+<body>
 
-    <script type="text/javascript" src="aframe-extras-controls.js"></script>
-    <!-- ... -->
-    <script type="text/javascript" src="aframe-extras-loaders.min.js"></script>
-    <!-- ... -->
-    <script type="text/javascript" src="aframe-extras.min.js"></script>
-    <!-- ... -->
+    <div class="topnav" id="myTopnav">
+        <a href="#" class="icon1"><img src="logo33.png" style="width:32px;height:32px" />  CAD-BOXX.COM</a>
 
-    <script
-      type="text/javascript"
-      src="aframe-spawnpoint-component.js"
-    ></script>
-    <!-- ... -->
-    <script type="text/javascript" src="super-hands.min.js"></script>
-    <!-- ... -->
-    <script
-      type="text/javascript"
-      src="aframe-select-bar-component.js"
-    ></script>
-    <!-- ... -->
+        <a href="./store.html">Store</a>
+        <a href="https://hubs.mozilla.com/spoke/">Creator</a>
 
-    <script type="text/javascript" src="bundle.js"></script>
-    <!-- ... -->
-    <script type="text/javascript" src="script.js"></script>
-    <!-- ... -->
-    <script type="text/javascript" src="aframe-inspector.min.js"></script>
-    <!-- ... -->
+        <a href="./contact.html">Contact</a>
+        <a href="./about.html">About</a>
 
-    <link rel="stylesheet" type="text/css" href="aframe.css" />
+        <a href="./index.html" class="active">Home</a>
 
-    <script src="../../js/vendor/LegacyJSONLoader.js"></script>
-    <script src="components/aabb-collider.js"></script>
-    <script src="components/grab.js"></script>
-    <script src="components/ground.js"></script>
-    <script src="shaders/skyGradient.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
 
-    <!--UI STUFF (menus and triggers) -->
-    <script src="aframe-mouse-cursor-component.js"></script>
-    <script src="oculus-touch-controls.js"></script>
-    <script src="vive-controls.js"></script>
-    <script src="thumb-controls.js"></script>
-    <script src="aframe-physics-system.js"></script>
-    <script src="aframe-gui.js"></script>
-    <script src="aframe-super-shooter-kit.js"></script>
-    <script src="aframe-super-keyboard.js"></script>
-    <!--  -->
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <script src="https://unpkg.com/aframe-thumb-controls-component@1.1.0/dist/aframe-thumb-controls-component.min.js"></script>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="aframe-master.min.js"></script>
-    <script src="aframe-gltf-exporter-component.min.js"></script>
-    <style>
-      .button:hover {
-        background-color: #fff;
-        color: blue;
-      }
-      .button {
-        background-color: blue;
-        border-radius: 8px;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 12px;
-        height: 34px;
-        margin-top: 5px;
-        margin-left: 5px;
-        outline: none;
-        position: relative;
-        width: 190px;
-        z-index: 999;
-      }
+    </div>
 
-      #container {
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body>
-    <!--<div id="container">
-        <button id="load-model" class="button"><span>Load</span></button>
-        <button id="position-it" class="button"><span>Position</span></button>
-        <button id="set-limits" class="button"><span>Limits</span></button>
-        <button id="export-scene" class="button"><span>Export GLTF</span></button>
-        <button id="export-scene-bin" class="button"><span>Binary</span></button>
-      
+    <div class="image-content">
+        <img src="logo33.png">
+    </div>
+    <div>
+        <li><a href="https://cad-boxx.com/">HOME<a></li>
+        <li><a href="https://cad-boxx.com/">HOME<a></li>
+        <li><a href="https://cad-boxx.com/">HOME<a></li>
+        <li><a href="https://cad-boxx.com/">HOME<a></li>
 
-        </div>-->
-    <a-scene
-      src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2FLightRoom.glb?v=1602367278566"
-      gltf-exporter
-    >
-      <!--Build our background and our floor-->
-      <a-plane
-        src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/border-pic.jpg?v=1654934865728"
-        static-body
-        position="0 0 -4"
-        rotation="-90 0 0"
-        width="100"
-        height="100"
-      ></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+    </div>
+    <div class="text-content">
+        <h1>
+            The cadboxx is a 3D environment and workspace with a focus on building mechanical assemblies. It is not a CAD system, yet can produce 3D Models for both CAD Systems and the latest 3D Games. Users can edit, create, import and position Models, then connect them using dynamic joints to define their relative motion. Simulations, Animations, interactivity, high quality models and unlimited downloads are just part of a very special service.
+        </h1>
+        </br>
+        <h3>
+            A CADBOXX can be used not only as a physics workspace, but can also create and export dynamic  mechanical assemblies of 3D solid models. Run Simulations and record Animations, then view the results on our player or upload to YouTube. Publish and share your creations on Hubs.
+        </h3>
+    </div>
 
-      <a-assets>
-        <a-asset-item
-          id="jt1"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fturntable2ci.glb?v=1622008262714"
-        ></a-asset-item>
-        <a-mixin
-          id="cube"
-          geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
-          hoverable
-          grabbable
-          stretchable
-          draggable
-          droppable
-          event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-          event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-          dynamic-body
-          shadow
-          click-impulse
-        >
-        </a-mixin>
-        <a-mixin
-          id="controller"
-          super-hands="colliderEvent: collisions;
-	                              colliderEventProperty: els;
-	                              colliderEndEvent: collisions;
-	                              colliderEndEventProperty: clearedEls;
-	                              grabStartButtons: gripdown, pointdown, triggerdown;
-	                              grabEndButtons: gripup, pointup, triggerup"
-          static-body="shape: sphere; sphereRadius: 0.11"
-          oculus-touch-controls="hand: left"
-          physics-collider
-          collision-filter="collidesWith: default;"
-          collisionforces="false"
-          onclick="click-impulse: true"
-        >
-        </a-mixin>
+    <div class="text-content-2">
+        <h3>
+            CREATOR: This online editor is linked to Mozilla Hubs and Sketchfab. Create a free, private account and import models from Sketchfab and use them together with your own custom models. When using the cadboxx, the scene is in place. The editor can be used to publish your work via Hubs. Our subscribers can access all our models on Sketchfab. </h3>
+        <br>
 
-        <a-mixin id="red" material="color: red"></a-mixin>
-        <a-mixin id="blue" material="color: blue"></a-mixin>
-        <a-mixin id="cub" geometry="primitive: box"></a-mixin>
-        <a-asset-item
-          id="g01"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd355spin.glb?v=1627987232153"
-        ></a-asset-item>
-        <a-mixin id="constraint" material="color: blue"></a-mixin>
-        <a-mixin id="weight" mass="2.0"></a-mixin>
-        <a-asset-item
-          id="g13"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fthrustcap_.glb?v=1603793815420"
-        ></a-asset-item
-        ><!--brgcap-->
-        <a-asset-item
-          id="g14"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Foff-road.glb?v=1627281917164"
-        ></a-asset-item
-        ><!--frontmain-->
-        <a-asset-item
-          id="g15"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd3spin.glb?v=1627306085346"
-        ></a-asset-item
-        ><!--piston-->
-        <a-asset-item
-          id="g16"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F831block.glb?v=1627559672131"
-        ></a-asset-item>
-        <a-asset-item
-          id="g17"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd3sphaxle.glb?v=1627806066552"
-        ></a-asset-item>
-        <a-asset-item
-          id="g18"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd355spin.glb?v=1628160908598"
-        ></a-asset-item>
-        <a-asset-item
-          id="g19"
-          gltf-model="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchassi2.glb?v=1628186100402"
-        ></a-asset-item>
-        <a-asset-item
-          id="g21"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd3sphaxle.glb?v=1627806066552"
-        ></a-asset-item>
-        <a-asset-item
-          id="g22"
-          src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbd355spin.glb?v=1628160908598"
-        ></a-asset-item>
-      </a-assets>
+    </div>
+    <div class="footer">
+        <i class="fa fa-facebook" style="padding-right: 2%" href="https://facebook.com"></i>
+        <i class="fa fa-instagram" style="padding-right: 2%" href="https://instagram.com"></i>
+        <i class="fa fa-twitter" href="https://twitter.com"></i>
+    </div>
 
-      <a-entity id="chassi" position="0 2 0" rotation="0 0 0">
-        <a-entity
-          gltf-model="#g19"
-          position="0 0 0"
-          rotation="0 0 0"
-          scale=".5 .5 .5"
-          dynamic-body
-        ></a-entity>
-        <!--<a-entity gltf-model="#g18" position="1.250 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
-			<a-entity position="0 0 0" rotation="0 0 0">
-				<a-box position="5 0 0" rotation="0 0 0" color="red" width=".25" height="2.5" depth="1.0"></a-cylinder>
-			</a-entity>	
-			<a-entity>
-				<a-box position="0 0 0" rotation="0 0 0" color="red" width=".25" height="2.5" depth="1.0"></a-cylinder>
-			</a-entity>
-			<a-entity>
-				<a-box position="-5 0 0" rotation="0 0 0" color="red" width=".25" height="2.5" depth="1.0"></a-cylinder>
-			</a-entity>-->
-      </a-entity>
-      <!--<a-entity position="0 30 -0.5">
-		        <a-plane width="50" height="50">
-					<a-gui-cursor></a-gui-cursor>
-					<a-gui-button></a-gui-button>
-					<a-gui-icon-button></a-gui-icon-button>	
-					<a-gui-icon-label-button></a-gui-icon-label-button>
-					<a-gui-radio></a-gui-radio>
-					<a-gui-toggle></a-gui-toggle>
-					<a-gui-slider></a-gui-slider>	
-					<a-gui-input></a-gui-input>
-					<a-gui-label></a-gui-label>
-					<a-gui-progress-bar></a-gui-progress-bar>
-					<a-gui-circle-loader></a-gui-circle-loader>
-					<a-gui-circle-timer></a-gui-circle-timer>
-				</a-plane>
-			</a-entity>
-        <!-- Environment --
-        <a-entity id="sky"
-                  geometry="primitive: sphere; radius: 65;"
-                  material="shader: skyGradient; colorTop: #353449; colorBottom: #BC483E; side: back"></a-entity>
-         <a-entity ground></a-entity>
-         <a-entity light="type: point; color: #f4f4f4; intensity: 0.2; distance: 0" position="8 10 18"></a-entity>
-         <a-entity light="type: point; color: #f4f4f4; intensity: 0.6; distance: 0" position="-8 10 -18"></a-entity>
-         <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.4;" position="-8 10 -18"></a-entity>
-      </a-entity>
-      <!-- Hands --
-      <a-entity hand-controls="left" aabb-collider="objects: .cube;" grab></a-entity>
-      <a-entity hand-controls="right" aabb-collider="objects: .cube;" grab></a-entity>
-      <a-entity position="0 1.6 2" camera look-controls wasd-controls></a-entity>
-		<!---->
-      <a-entity
-        laser-controls
-        raycaster="hand: left; objects: .links; far: 5"
-      ></a-entity>
-      <!--
-			
-            <a-entity id="planeset" position="2 2 2" dynamic-body>
-				<a-plane id="con1" static-body position="0 0 0" rotation="-90 0 0" color="#4CC3D9"
-				
-				>
-					<a-plane id="con2" dynamic-body position="0 1.5 0" rotation="0 0 0" color="#4CC911"
-					constraint="type pointTopoint;
-					target: #con1
-					targetAxis: 0 1 0"
-					></a-plane>
-				</a-plane>
-			</a-entity><!-- use constraint mixins -->
 
-      <!-- HINGE PIN working with 2 z-axis wheels-->
-      <!--<a-entity position="0 5 -5">
-        <a-cylinder
-          id="hinge3-target"
-          position="0 0.1 0 "
-          color="#777"
-          static-body
-          radius="0.5"
-          height="0.1"
-        >
-        </a-cylinder>
-        <a-entity
-          id="c11"
-          class="cube"
-          mixin="cube"
-          position="0 0 0"
-          material="color: yellow"
-          constraint="type: hinge;
-                           target: #hinge3-target;
-                           axis: 0 1 0;
-                           targetAxis: 0 1 0;
-                           pivot: 0 0.1 0;
-                           targetPivot: 0 -0.5 0;"
-        ></a-entity>
-        <a-entity
-          class="cube"
-          mixin="cube"
-          position="0 0 0"
-          material="color: yellow"
-          constraint="type: hinge;
-	                           target: #c11;
-	                           axis: 0 0 1;
-	                           targetAxis: 0 0 1;
-	                           pivot: 0 0 0;
-	                           targetPivot: 0 0 1.0"
-        ></a-entity>
-        <a-entity
-          class="cube"
-          mixin="cube"
-          position="0 0 0"
-          material="color: yellow"
-          constraint="type: hinge;
-		                           target: #c11;
-		                           axis: 0 0 1;
-		                           targetAxis: 0 0 1;
-		                           pivot: 0 0 0;
-		                           targetPivot: 0 0 -1.0"
-        ></a-entity>
-      </a-entity>-->
-      <a-entity src="#jt1" position="2 2 2"></a-entity>
-      <!--Build three obstacles as static bodies so we can stand on them-->
-      <a-box
-        dynamic-body
-        position="-2 7 0"
-        rotation="30 45 30"
-        color="#4CC3D9"
-        scale="5 5 5"
-        clickable
-        draggable
-        droppable
-        drag-droppable
-        hoverable
-        grabbable
-        stretchable
-      ></a-box>
-      <a-cylinder
-        dynamic-body
-        position="'-3 -5 -3"
-        radius="2.5"
-        height="5"
-        color="#FFC65D"
-      ></a-cylinder>
 
-      <!--Build one dynamic body - a soccer ball we can play with-->
-      <a-sphere
-        id="theball"
-        dynamic-body
-        position="-3 3 0"
-        radius="2.5"
-        color="tomato"
-        mass="1"
-      ></a-sphere>
 
-      <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
 
-      <!--Make a player/camera entity--
-           <a-entity class="player" id="player"
-                camera
-				look-controls
-                jump-ability
-				universal-controls
-                tracked-controls="controller: 0; idPrefix: OpenVR"
-				hand-controls
-				kinematic-body
-                position="1 4 2">
-            </a-entity>
-			
-			
-			<!-- Camera + cursor. -->
-      <a-entity id="cameraRig" position="0 1.6 0">
-        <a-camera look-controls wasd-controls position="0 0 0"> </a-camera>
-        <!-- /camera -->
-      </a-entity>
-    </a-scene>
-  </body>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
+
+</body>
+
   <script type="text/javascript" src="script.js"></script
   ><!-- ... -->
   <script type="text/javascript" src="aframe-ammo-constraints.js"></script
